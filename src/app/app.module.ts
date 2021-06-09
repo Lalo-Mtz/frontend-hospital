@@ -10,6 +10,9 @@ import { DoctorComponent } from './components/doctor/doctor.component';
 import { NurseComponent } from './components/nurse/nurse.component';
 import { StaffComponent } from './components/staff/staff.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { SigninDoctorComponent } from './components/signin-doctor/signin-doctor.component';
+import { SigninNurseComponent } from './components/signin-nurse/signin-nurse.component';
+import { SigninStaffComponent } from './components/signin-staff/signin-staff.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { SignupComponent } from './components/signup/signup.component';
     DoctorComponent,
     NurseComponent,
     StaffComponent,
-    SignupComponent
+    SignupComponent,
+    SigninDoctorComponent,
+    SigninNurseComponent,
+    SigninStaffComponent
   ],
   imports: [
     BrowserModule,
