@@ -6,9 +6,12 @@ describe('SigninDoctorComponent', () => {
   let component: SigninDoctorComponent;
   let fixture: ComponentFixture<SigninDoctorComponent>;
 
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SigninDoctorComponent ]
+      declarations: [ SigninDoctorComponent 
+      
+      ]
     })
     .compileComponents();
   });
@@ -23,3 +26,4 @@ describe('SigninDoctorComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

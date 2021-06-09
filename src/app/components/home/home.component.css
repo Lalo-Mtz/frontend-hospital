@@ -4,6 +4,7 @@
     background: no-repeat no-repeat center scroll;
     -webkit-background-size:cover;
     background-size: cover;
+    /*background-image: linear-gradient(to right, #6600ff,#00ff91);*/
 }
 
 .carousel-caption{
