@@ -64,6 +64,8 @@ body
 	pointer-events: none;
 	transition: .5s;
 }
+
+
 .box .inputBox input:focus ~ label,
 .box .inputBox input:valid ~ label
 {
@@ -84,10 +86,12 @@ body
 	padding: 10px 20px;
 	cursor: pointer;
 	border-radius: 5px;
+  transition: 1s all ease-in-out;
 }
 
 .box input[type="submit"]:hover{
   background: linear-gradient(-45deg,#6600ff,#337fc8,#00ff91 );
+  color: #fff;
 }
 
 
@@ -118,16 +122,25 @@ body
 	}
 	.box h4 a
 	{
-		background: -webkit-linear-gradient(left,#6600ff,#337fc8,#00ff91);
+  
+    /* Set the background of 
+        the text  */
+    background:linear-gradient(to right,#6600ff,#337fc8,#00ff91);
+    display: inline-block;
+    color: #fff;
+    -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: 0.5s all;
 
 	}
 
   .box h4 a:hover{
+    color: #fff;
     background: -webkit-linear-gradient(right,#6600ff,#337fc8,#00ff91);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: 0.5s all;
     
   }
 
