@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+<<<<<<< HEAD
 import { HomeComponent } from './components/home/home.component';
 import { DoctorComponent } from './components/doctor/doctor.component';
 import { NurseComponent } from './components/nurse/nurse.component';
@@ -14,6 +15,20 @@ const routes: Routes = [
   { path: 'nurse', component: NurseComponent },
   { path: 'staff', component: StaffComponent },
   { path: 'signup', component: SignupComponent}
+=======
+import { DoctorComponent } from './components/doctor/doctor.component';
+import { HomeComponent } from './components/home/home.component';
+import { NurseComponent } from './components/nurse/nurse.component';
+import { StaffComponent } from './components/staff/staff.component';
+
+
+const routes: Routes = [
+  {path: "doctor",component:DoctorComponent},
+  {path: "",component:HomeComponent},
+  {path: "nurse",component:NurseComponent},
+  {path: "staff",component:StaffComponent},
+  
+>>>>>>> 185ecae228973e141a1dcd5b36c0f41f1d673fb4
 ];
 
 @NgModule({
