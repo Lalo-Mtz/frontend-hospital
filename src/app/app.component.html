@@ -23,6 +23,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/staff" routerLinkActive="active">Personal</a>
         </li>
+        
         <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
           <li class="nav-item">
             <a class="nav-link" routerLink="/signup" routerLinkActive="active">Sign Up</a>
