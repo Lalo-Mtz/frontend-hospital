@@ -1,0 +1,51 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	font-family: sans-serif;
+	/*background: linear-gradient(45deg,#00b9f7 ,#0073ff);*/
+    background:linear-gradient(rgba(69, 0, 78, 0.247),rgba(69, 0, 78, 0.247)), url(src/assets/nurse.jfif) ;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.box .nu input{
+    border-style: solid;
+  border-width: 0 0 2px 0;
+  border-image: linear-gradient(45deg,#ff0077,#b100bb,#6200ff)1;
+}
+
+.box2{
+    width: 500px;
+	height: 400px;
+}
+
+.nu input:focus ~ label,
+.nu input:valid ~ label
+{
+	top: -18px;
+	left: 0;
+	background: -webkit-linear-gradient(right,#ff0077,#b100bb,#6200ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+	font-size: 12px;
+}
+.box input[type="submit"]{
+	background: transparent;
+	border:none;
+	outline: none;
+	color: #fff;
+	background: linear-gradient(45deg,#ff0077,#b100bb,#6200ff );
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+  transition: 1s all ease-in-out;
+}
+
+.box input[type="submit"]:hover{
+  background: linear-gradient(45deg,#6200ff,#b100bb,#ff0077 );
+  color: #fff;
+}

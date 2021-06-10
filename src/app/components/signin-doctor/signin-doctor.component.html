@@ -4,18 +4,18 @@
   <h2>Login</h2>
   <form (submit)="signIn()">
     <div class="inputBox">
-      <input type="email" name="email" required="rellena" [(ngModel)]="doctor.email">
+      <input type="email" name="email" [(ngModel)]="doctor.email" required>
       <label>Email</label>
     </div>
     <div class="inputBox">
-      <input type="password" name="password" required=""  [(ngModel)]="doctor.password">
+      <input type="password" name="password" [(ngModel)]="doctor.password" required >
       <label>Password</label>
     </div>
     <input type="submit" value="submit">
   </form>
   <a href="#" class="a">Forget Password?</a>
   <h5>Sign Up Using</h5>
-  <ul>
+  <ul class="sig">
     <li>
     <a href="#">
       <span></span>
