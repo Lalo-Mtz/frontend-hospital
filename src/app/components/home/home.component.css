@@ -463,6 +463,20 @@
         height: 200px;
         margin: 50px -35px;
     }
+    .btncarta{
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        background-color: white;
+        color: black;
+        font-size: 14px;
+        opacity: 0;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        margin: 30px 17px;
+        border-radius: 10px;
+        transition: 0.5s ease-in-out;
+    }
         
     
 }
