@@ -19,8 +19,17 @@ body
 }
 
 .box2{
-    width: 500px;
+    position:  absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
 	height: 400px;
+	padding: 40px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	border-radius: 20px;
 }
 
 .nu input:focus ~ label,
@@ -48,4 +57,35 @@ body
 .box input[type="submit"]:hover{
   background: linear-gradient(45deg,#6200ff,#b100bb,#ff0077 );
   color: #fff;
+}
+
+
+@media screen and (max-width: 988px)
+{
+	
+  .box2
+	{
+		width: 450px;
+		height: 450px;
+		right: 10px;
+	}
+}
+@media screen and (max-width: 640px)
+{
+
+    .box2
+	{
+		width: 350px;
+		height: 400px;
+		right: 10px;
+	}
+}
+@media screen and (max-width: 320px)
+{
+    .box2
+	{
+		width: 310px;
+		height: 400px;
+		right: 10px;
+	}
 }

@@ -1,14 +1,23 @@
+.slide{
+    height: 100vh;
+    
+}
+
+.slide img{
+    height: 100vh;
+    
+}
+
+
 .carousel-item{
     height: 100vh;
-    min-height: 300px;
-    background: no-repeat no-repeat center scroll;
-    -webkit-background-size:cover;
-    background-size: cover;
-    /*background-image: linear-gradient(to right, #6600ff,#00ff91);*/
+    width: 100%;
+    background-size: cover;/*
+    background-image: linear-gradient(to right, #6600ff,#00ff91);*/
 }
 
 .carousel-caption{
-    bottom: 220px;
+    bottom: 200px;
 }
 
 
@@ -68,7 +77,7 @@
     opacity: 1;
 }
 
-.carta img{
+.carta .imgcarta{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -169,7 +178,7 @@
     opacity: 1;
 }
 
-.carta2 img{
+.carta2 .imgcarta2{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -227,3 +236,89 @@
     box-shadow:1px 1px 10px rgb(0, 223, 130);
 }
 
+
+
+@media screen and (max-width: 988px)
+{
+	
+
+.carousel-caption{
+    bottom: 10px;
+}
+
+
+.carousel-caption h5{
+    text-shadow: 2px 7px 14px #00ff91;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.carousel-caption p{
+    text-shadow: 7px 7px 14px #00ff91;
+    width: 60%;
+    margin: auto;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+  
+}
+@media screen and (max-width: 520px)
+{
+
+    .slide{
+        height: 150vh;
+    }
+
+    .carousel-item{
+        height: 150vh;
+        width: 100%;
+        background-size: cover;/*
+        background-image: linear-gradient(to right, #6600ff,#00ff91);*/
+    }
+
+    .slide img{
+        height: 150vh;
+        background-image: linear-gradient(to right, #6600ff,#00ff91);
+    }
+    
+
+    .carousel-caption h5{
+        text-shadow: 2px 7px 14px #00ff91;
+        font-size: 5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 25px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .carousel-caption p{
+        text-shadow: 7px 7px 14px #00ff91;
+        width: 60%;
+        margin: auto;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .carta{
+        width: 300px;
+        height: 200px;
+        margin: 50px -35px;
+    }
+
+    .carta2{
+        width: 300px;
+        height: 200px;
+        margin: 50px -35px;
+    }
+        
+    
+}
+@media screen and (max-width: 320px)
+{
+    
+}

@@ -49,3 +49,32 @@ body
   background: linear-gradient(45deg,#00ff8a,#00fea7,#00fbff );
   color: #fff;
 }
+@media screen and (max-width: 988px)
+{
+	
+  .box2
+	{
+		width: 450px;
+		height: 450px;
+		right: 10px;
+	}
+}
+@media screen and (max-width: 640px)
+{
+
+    .box2
+	{
+		width: 350px;
+		height: 400px;
+		right: 10px;
+	}
+}
+@media screen and (max-width: 320px)
+{
+    .box2
+	{
+		width: 310px;
+		height: 400px;
+		right: 10px;
+	}
+}
