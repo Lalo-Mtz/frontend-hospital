@@ -236,23 +236,27 @@
     box-shadow:1px 1px 10px rgb(0, 223, 130);
 }
 
-@media screen and (max-width: 1400px)
+
+@media screen and (max-width: 1900px)
 {
-	
     .slide{
-        height: 150vh;
+        height: 100vh;
     }
 
     .carousel-item{
-        height: 150vh;
+        height: 100vh;
         width: 100%;
         background-size: cover;/*
         background-image: linear-gradient(to right, #6600ff,#00ff91);*/
     }
 
     .slide img{
-        height: 150vh;
+        height: 100vh;
         background-image: linear-gradient(to right, #6600ff,#00ff91);
+    }
+
+    .carousel-caption{
+        bottom: 0px;
     }
     
 
@@ -290,11 +294,12 @@
 
 
 
-@media screen and (max-width: 900px)
+
+@media screen and (max-width: 1400px)
 {
 	
     .slide{
-        height: 150vh;
+        height: 100vh;
     }
 
     .carousel-item{
@@ -303,6 +308,69 @@
         background-size: cover;/*
         background-image: linear-gradient(to right, #6600ff,#00ff91);*/
     }
+
+    .slide img{
+        height: 100vh;
+        background-image: linear-gradient(to right, #6600ff,#00ff91);
+    }
+
+    .carousel-caption{
+        bottom: 0px;
+    }
+    
+
+    .carousel-caption h5{
+        text-shadow: 2px 7px 14px #00ff91;
+        font-size: 5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 25px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .carousel-caption p{
+        text-shadow: 7px 7px 14px #00ff91;
+        width: 60%;
+        margin: auto;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .carta{
+        width: 350px;
+        height: 200px;
+        margin: 50px -0px;
+    }
+
+    .carta2{
+        width: 350px;
+        height: 200px;
+        margin: 50px -0px;
+    }
+  
+}
+
+
+
+@media screen and (max-width: 1100px)
+{
+	
+    .slide{
+        height: 150vh;
+    }
+
+    .carousel-item{
+        height: 150vh;
+        width: 100%;
+        background-size: cover;/*
+        background-image: linear-gradient(to right, #6600ff,#00ff91);*/
+    }
+
+    .carousel-caption{
+        bottom: 50px;
+    }
+    
 
     .slide img{
         height: 150vh;
@@ -354,6 +422,11 @@
         background-size: cover;/*
         background-image: linear-gradient(to right, #6600ff,#00ff91);*/
     }
+
+    .carousel-caption{
+        bottom: 50px;
+    }
+
 
     .slide img{
         height: 150vh;
