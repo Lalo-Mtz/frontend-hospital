@@ -29,7 +29,7 @@
             <a class="nav-link" routerLink="/signup" routerLinkActive="active">Sign Up</a>
           </li>
         </ng-container>
-        <ng-template>
+        <ng-template #loggedIn>
           <li class="nav-item">
             <a class="nav-link" (click)="authService.logout()">LogOut</a>
           </li>
