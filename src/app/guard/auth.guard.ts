@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Router } from '@angular/router';
-import { AuthService } from './services/auth.service';
+import { CanActivate, Router} from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 
 @Injectable({
@@ -15,7 +14,7 @@ export class AuthGuard implements CanActivate {
   ) { }
 
   canActivate(){
-    if(this.authService.loggedIn()) {
+    if(this.authService.loggedIn() && this.authService.getUser() == 'doctor') {
       return true;
     }
     this.router.navigate(['/signin-doctor']);

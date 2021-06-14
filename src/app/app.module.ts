@@ -15,7 +15,9 @@ import { SigninNurseComponent } from './components/signin-nurse/signin-nurse.com
 import { SigninStaffComponent } from './components/signin-staff/signin-staff.component';
 
 
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './guard/auth.guard';
+import { NurseGuard } from './guard/nurse.guard';
+import { StaffGuard } from './guard/staff.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
@@ -38,6 +40,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
   ],
   providers: [
     AuthGuard,
+    NurseGuard,
+    StaffGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

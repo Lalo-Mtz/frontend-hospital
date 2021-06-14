@@ -7,31 +7,44 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private URL = 'http://localhost:3000/doctor';
-
+  private URL = 'http://localhost:3000';
+  
   constructor(
     private http: HttpClient,
     private router: Router
   ) { }
 
   signUp(user: any) {
-    return this.http.post<any>(this.URL + '/signup', user);
+    return this.http.post<any>(this.URL + '/doctor/signup', user);
   }
 
   signIn(user: any) {
-    return this.http.post<any>(this.URL + '/signin', user);
+    return this.http.post<any>(this.URL + '/doctor/signin', user);
+  }
+
+  signInNurse(nurse: any) {
+    return this.http.post<any>(this.URL + '/nurse/signin', nurse);
+  }
+
+  signInStaff(staff: any) {
+    return this.http.post<any>(this.URL + '/staff/signin', staff);
   }
 
   loggedIn() {
     return !!localStorage.getItem('token');
   }
 
-  getToken(){
+  getToken() {
     return localStorage.getItem('token');
+  }
+
+  getUser() {
+    return localStorage.getItem('user');
   }
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     this.router.navigate(['/home']);
   }
 }

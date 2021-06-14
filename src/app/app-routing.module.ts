@@ -12,14 +12,16 @@ import { SigninNurseComponent } from './components/signin-nurse/signin-nurse.com
 import { SigninStaffComponent } from './components/signin-staff/signin-staff.component';
 
 
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './guard/auth.guard';
+import { NurseGuard } from './guard/nurse.guard';
+import { StaffGuard } from './guard/staff.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'doctor', component: DoctorComponent, canActivate: [AuthGuard] },
-  { path: 'nurse', component: NurseComponent },
-  { path: 'staff', component: StaffComponent },
+  { path: 'nurse', component: NurseComponent, canActivate: [NurseGuard] },
+  { path: 'staff', component: StaffComponent, canActivate: [StaffGuard] },
   { path: 'signup', component: SignupComponent },
   { path: 'signin-doctor', component: SigninDoctorComponent },
   { path: 'signin-nurse', component: SigninNurseComponent },
