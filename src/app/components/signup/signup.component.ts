@@ -22,7 +22,6 @@ export class SignupComponent implements OnInit {
   }
 
   signUp(): void {
-<<<<<<< HEAD
     this.authService.signUp(this.user)
       .subscribe(
         res => {
@@ -32,7 +31,7 @@ export class SignupComponent implements OnInit {
         err => console.log(err)
       )
     
-=======
+
     if (this.user.username != '' && this.user.email != '' && this.user.password != '') {
       this.authService.signUp(this.user)
         .subscribe(
@@ -68,7 +67,7 @@ export class SignupComponent implements OnInit {
         footer: 'Check that none are missing'
       });
     }
->>>>>>> 1aa6e9c1922c7e9802d0721e87db742592dd317c
+
   }
 
 }
