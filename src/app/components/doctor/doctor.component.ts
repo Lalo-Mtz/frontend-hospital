@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 // Our Process
 import { PatientService } from '../../services/patient.service';
 import { DoctorService } from '../../services/doctor.service';
+import { AuthService }  from '../../services/auth.service';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-doctor',
@@ -16,7 +19,8 @@ export class DoctorComponent implements OnInit {
 
   constructor(
     private patientService: PatientService,
-    private doctorService: DoctorService
+    private doctorService: DoctorService,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -25,9 +29,20 @@ export class DoctorComponent implements OnInit {
         res => {
           this.me = res;
         },
-        err => console.log(err)
+        err => {
+          console.log('Aqui error', err);
+          if(err.error.message == 'Email not verified'){
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: "Your email isn't verified yet",
+              footer: 'Check it out email'
+            });
+            this.authService.logout();
+          }
+        }
       );
-    this.consultPatient();
+    //this.consultPatient();
   }
 
   consultPatients() {

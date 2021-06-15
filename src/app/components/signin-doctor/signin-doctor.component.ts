@@ -26,13 +26,16 @@ export class SigninDoctorComponent implements OnInit {
       .subscribe(
         res => {
           if (res.auth) {
+            
             localStorage.setItem('token', res.token);
             localStorage.setItem('user', 'doctor');
+
+
             this.router.navigate(['/doctor']);
           }
         },
         err => {
-          console.log(err)
+          console.log(err);
         }
       )
   }
