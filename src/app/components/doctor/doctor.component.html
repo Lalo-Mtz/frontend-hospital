@@ -8,16 +8,16 @@
         <!--Secciones-del-tablero-->
         <div class="sidebar-menu">
             <ul>
-                <li>
-                    <a href="" class="active" routerLinkActive="active"><span class="fa fa-table"></span>
+                <li >
+                    <a (click)="totable()" routerLink="/doctor" routerLinkActive="active" ><span class="fa fa-table"></span>
                     <span>Tablero</span></a>
                 </li>
                 <li>
-                    <a href="" routerLinkActive="active"><span class="fa fa-user-md"></span>
-                    <span>Doctores</span></a>
+                    <a (click)="todoctorme()"  routerLinkActive="active" ><span class="fa fa-user-md"></span>
+                    <span>Yo merengues</span></a>
                 </li>
                 <li>
-                    <a href="" routerLinkActive="active"><span class="fa fa-user"></span>
+                    <a (click)="todoctorme()" routerLinkActive="active"><span class="fa fa-user"></span>
                     <span>Pacientes</span></a>
                 </li>
                 <li>
@@ -36,7 +36,9 @@
         </div>
     </div>
 
+
     <div class="main-content">
+        <section id="Tablero">
         <header>
             <h2>
                 <label for="nav-toggle">
@@ -181,9 +183,9 @@
                                     </div>
                                 </div>
                                 <div class="contact">
-                                    <span class="fa fa-user-circle"></span>
-                                    <span class="fa fa-whatsapp"></span>
-                                    <span class="fa fa-mobile"></span>
+                                    <span class="fa fa-user-circle purple"></span>
+                                    <span class="fa fa fa-phone green"></span>
+                                    <span class="fa fa fa-phone red"></span>
                                 </div>
                             </div>
 
@@ -196,12 +198,11 @@
                                     </div>
                                 </div>
                                 <div class="contact">
-                                    <span class="fa fa-user-circle"></span>
-                                    <span class="fa fa-whatsapp"></span>
-                                    <span class="fa fa-mobile"></span>
+                                    <span class="fa fa-user-circle purple"></span>
+                                    <span class="fa fa fa-phone green"></span>
+                                    <span class="fa fa fa-phone red"></span>
                                 </div>
                             </div>
-
                             <div class="customer">
                                 <div class="info">
                                     <img src="assets/staff.jpg" width="40px" height="40px" alt="">
@@ -211,12 +212,11 @@
                                     </div>
                                 </div>
                                 <div class="contact">
-                                    <span class="fa fa-user-circle"></span>
-                                    <span class="fa fa-whatsapp"></span>
-                                    <span class="fa fa-mobile"></span>
+                                    <span class="fa fa-user-circle purple"></span>
+                                    <span class="fa fa fa-phone green"></span>
+                                    <span class="fa fa fa-phone red"></span>
                                 </div>
                             </div>
-
                             <div class="customer">
                                 <div class="info">
                                     <img src="assets/staff.jpg" width="40px" height="40px" alt="">
@@ -226,9 +226,23 @@
                                     </div>
                                 </div>
                                 <div class="contact">
-                                    <span class="fa fa-user-circle"></span>
-                                    <span class="fa fa-whatsapp"></span>
-                                    <span class="fa fa-mobile"></span>
+                                    <span class="fa fa-user-circle purple"></span>
+                                    <span class="fa fa fa-phone green"></span>
+                                    <span class="fa fa fa-phone red"></span>
+                                </div>
+                            </div>
+                            <div class="customer">
+                                <div class="info">
+                                    <img src="assets/staff.jpg" width="40px" height="40px" alt="">
+                                    <div>
+                                        <h4>Pedro Fernandez</h4>
+                                        <small>Diarrea</small>
+                                    </div>
+                                </div>
+                                <div class="contact">
+                                    <span class="fa fa-user-circle purple"></span>
+                                    <span class="fa fa fa-phone green"></span>
+                                    <span class="fa fa fa-phone red"></span>
                                 </div>
                             </div>
 
@@ -240,6 +254,46 @@
                 
             </div>
         </main>
+        </section>
+        
+        <section id="doctorme">
+    
+            <main>
+                <div class="dmtitle"><h1>Mi Información</h1></div>
+                <div class="dmcard">
+                    <div class="dminfo">
+                        <div class="secciones">
+                        <h3>Correo Electronico <span class="fa fa-envelope"></span></h3>
+                        <p>Brayancapetoccc@gmail.com</p>
+                        </div>
+
+                        <div class="secciones">
+                        <h3>Pais<span class="fa fa-globe"></span></h3>
+                        <p>Mexico</p>
+                        </div>
+                        <div class="secciones">
+                        <h3>Universidad <span class="fa fa-university"></span></h3>
+                        <p>BUAA</p>
+                        </div>
+                        <div class="secciones">
+                        <h3>Telefono <span class="fa fa-phone"></span></h3>
+                        <p>449 346 51 48</p>
+                        </div>
+
+
+                    </div>
+                    <div class="dmimg">
+                        <img src="assets/e.jpg" alt=""/>
+
+                        
+                        <h1>Brayan Capetillo Macias</h1>
+                        <p><span class="fa fa-user-md"></span> Medico General</p>
+                        
+                    </div>
+                </div>
+            </main>
+
+        </section>
 
     </div>
 

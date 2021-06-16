@@ -10,6 +10,12 @@
 }
 
 
+#doctorme{
+   padding-top: 100px;
+}
+#Tablero{
+    padding-top: 100px;
+ }
 
 .sidebar {
     margin-top: 80px;
@@ -42,6 +48,7 @@
     width: 100%;
     margin-bottom: 1.7rem;
     padding-left: 1rem;
+    cursor: pointer;
 }
 
 .sidebar-menu a {
@@ -324,11 +331,103 @@ tr td:last-child {
 }
 
 .contact span {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
     display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 3px 2px;
     margin-left: .5rem;
     color: #6600ff;
+    cursor: pointer;
 }
+
+.contact span.green{
+    color: #fff;
+    background-color: rgb(6, 192, 6);
+    border-radius: 50%;
+    transition: 0.4s ease-in-out;
+}
+.contact span.red{
+    color: #fff;
+    background-color: red;
+    border-radius: 50%;
+    transition: 0.4s ease-in-out;
+}
+.contact span.purple{
+    color: #6200ff;
+    font-size: 1.6rem;
+    transition: 0.4s ease-in-out;
+}
+
+.contact span.green:hover{
+    transform: scale(1.2);
+}
+.contact span.red:hover{
+    transform: scale(1.2);
+}
+.contact span.purple:hover{
+    transform: scale(1.2);
+}
+
+.dmcard{
+    margin-top: 3.5rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 50% auto;
+}
+
+
+.dminfo p{
+    padding: 10px 10px;
+}
+
+.dminfo h3{
+    padding: 10px 10px;
+}
+
+.dminfo .secciones{
+    background: #f0f0f0;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.dmimg{
+    align-items: center;
+    text-align: center;
+}
+
+.dmimg img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.dmimg h1,
+.dmimg p{
+    padding-top: 30px;
+}
+.dmimg p{
+    padding-top: 30px;
+    font-size: 1.7rem;
+}
+
+.secciones span{
+    color: #6200ff;
+    padding-left: 10px;
+    font-size: 1.7rem;
+    margin-top: 5px;
+}
+
+.dmimg span{
+    text-align: center;
+    color: #6200ff;
+    font-size: 1.8rem;
+}
+
+
+
 
 @media only screen and (max-width: 1200px) {
     .sidebar {
@@ -435,6 +534,9 @@ tr td:last-child {
 
 @media only screen and (max-width: 560px) {
     .cards {
+        grid-template-columns: 100%;
+    }
+    .dmcard{
         grid-template-columns: 100%;
     }
 }
