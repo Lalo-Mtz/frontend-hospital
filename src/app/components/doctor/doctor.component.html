@@ -17,19 +17,19 @@
                     <span>Yo merengues</span></a>
                 </li>
                 <li>
-                    <a (click)="todoctorme()" routerLinkActive="active"><span class="fa fa-user"></span>
+                    <a (click)="topacientes()" routerLinkActive="active"><span class="fa fa-user"></span>
                     <span>Pacientes</span></a>
                 </li>
                 <li>
-                    <a href="" routerLinkActive="active"><span class="fa fa-address-card"></span>
+                    <a (click)="tohistorial()" routerLinkActive="active"><span class="fa fa-address-card"></span>
                     <span>Historial de Consulta</span></a>
                 </li>
                 <li>
-                    <a href="" routerLinkActive="active"><span class="fa fa-id-card"></span>
+                    <a (click)="toexpediente()" routerLinkActive="active"><span class="fa fa-id-card"></span>
                     <span>Expediente Clinico</span></a>
                 </li>
                 <li>
-                    <a href="" routerLinkActive="active"><span class="fa fa-address-card-o"></span>
+                    <a (click)="topacientes()" routerLinkActive="active"><span class="fa fa-address-card-o"></span>
                     <span>Recetas</span></a>
                 </li>
             </ul>
@@ -289,6 +289,223 @@
                         <h1>Brayan Capetillo Macias</h1>
                         <p><span class="fa fa-user-md"></span> Medico General</p>
                         
+                    </div>
+                </div>
+            </main>
+
+        </section>
+
+        <section id="pacientes">
+            <main>
+                <div class="histitle"><h1>Pacientes</h1></div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Nombre</td>
+                                    <td>Apellido</td>
+                                    <td>Fecha de Nacimiento</td>
+                                    <td>Numero de Celular</td>
+                                    <td>Estado</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>021420</td>
+                                    <td>Brayan</td>
+                                    <td>Capetillo macias</td>
+                                    <td>25-02-2000</td>
+                                    <td>449 346 51 48</td>
+                                    <td>
+                                        <span class="status green"></span> Bueno
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>021420</td>
+                                    <td>Gerardo</td>
+                                    <td>Martinez Martinez</td>
+                                    <td>02-12-2000</td>
+                                    <td>449 346 51 48</td>
+                                    <td>
+                                        <span class="status red"></span> Malo
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>021420</td>
+                                    <td>efrain</td>
+                                    <td>peralta Rodriguez</td>
+                                    <td>02-12-2000</td>
+                                    <td>449 346 51 48</td>
+                                    <td>
+                                        <span class="status yellow"></span> Intermedio
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>021420</td>
+                                    <td>moises</td>
+                                    <td>rubio robledo</td>
+                                    <td>02-12-2000</td>
+                                    <td>449 346 51 48</td>
+                                    <td>
+                                        <span class="status green"></span> Bueno
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+        </section>
+        <section id="historial">
+            <main>
+                <div class="histitle"><h1>Historial de Consultas</h1></div>
+
+                <div class="hissub">
+                    <h1>Nombre de paciente</h1>
+                    <div class="cardhis"><img src="assets/e.jpg" alt=""> Brayan Capetillo macias</div>
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <td>ID Consulta</td>
+                                    <td>Fecha de Consulta</td>
+                                    <td>Estado</td>
+                                    <td>Observaciones/ notas</td>
+                                    <td>Receta</td>
+                                    
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0001</td>
+                                    <td>25-20-2020</td>
+                                    
+                                    <td>
+                                        <span class="status green"></span> Bueno
+                                    </td>
+                                    <td>tos</td>
+                                    <td><a href="">Receta 0001</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>0002</td>
+                                    <td>25-20-2020</td>
+                                    
+                                    <td>
+                                        <span class="status green"></span> Bueno
+                                    </td>
+                                    <td>covid</td>
+                                    <td><a href="">Receta 0002</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>0003</td>
+                                    <td>25-20-2020</td>
+                                    
+                                    <td>
+                                        <span class="status green"></span> Bueno
+                                    </td>
+                                    <td>gripa</td>
+                                </tr>
+                                <tr>
+                                    <td>0004</td>
+                                    <td>25-20-2020</td>
+                                    
+                                    <td>
+                                        <span class="status green"></span> Bueno
+                                    </td>
+                                    <td>se murio</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+        </section>
+        
+
+        <section id="expediente">
+            <main>
+                <div class="histitle"><h1>Expediente Clinico</h1></div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Nombre</td>
+                                    <td>Apellido</td>
+                                    <td>Fecha de Nacimiento</td>
+                                    <td>Numero de Celular</td>
+                                    <td>Estado</td>
+                                    <td>Observaciones/ notas</td>
+                                    <td>Historial</td>
+                                    <td>Datos</td>
+                                    <td>Resultados de Laboratorio</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>021420</td>
+                                    <td>Brayan</td>
+                                    <td>Capetillo macias</td>
+                                    <td>25-02-2000</td>
+                                    <td>449 346 51 48</td>
+                                    <td>
+                                        <span class="status green"></span> Bueno
+                                    </td>
+                                    <td>es alergico a muchas cosas el bato</td>
+                                    <td><a href="">Historial</a></td>
+                                    <td><a href="">Editar</a></td>
+                                    <td><a href="">Resultados de Laboratorio</a></td>
+                                </tr>
+                                <tr>
+                                    <td>021420</td>
+                                    <td>Gerardo</td>
+                                    <td>Martinez Martinez</td>
+                                    <td>02-12-2000</td>
+                                    <td>449 346 51 48</td>
+                                    <td>
+                                        <span class="status red"></span> Malo
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>021420</td>
+                                    <td>efrain</td>
+                                    <td>peralta Rodriguez</td>
+                                    <td>02-12-2000</td>
+                                    <td>449 346 51 48</td>
+                                    <td>
+                                        <span class="status yellow"></span> Intermedio
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>021420</td>
+                                    <td>moises</td>
+                                    <td>rubio robledo</td>
+                                    <td>02-12-2000</td>
+                                    <td>449 346 51 48</td>
+                                    <td>
+                                        <span class="status green"></span> Bueno
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </main>
