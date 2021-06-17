@@ -6,6 +6,8 @@ import { DoctorService } from '../../services/doctor.service';
 import { AuthService } from '../../services/auth.service';
 
 import Swal from 'sweetalert2';
+import { BehaviorSubject } from 'rxjs';
+import { RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-doctor',
@@ -64,5 +66,28 @@ export class DoctorComponent implements OnInit {
         err => console.log(err)
       )
   }
+
+  totable(){
+    document.getElementById("Tablero")?.scrollIntoView({behavior:"smooth"});
+  }
+
+  todoctorme(){
+    document.getElementById("doctorme")?.scrollIntoView({behavior:"smooth"});
+  }
+
+  topacientes(){
+    document.getElementById("pacientes")?.scrollIntoView({behavior:"smooth"});
+  }
+
+  toexpediente(){
+    document.getElementById("expediente")?.scrollIntoView({behavior:"smooth"});
+  }
+
+  tohistorial(){
+    document.getElementById("historial")?.scrollIntoView({behavior:"smooth"});
+  }
+
+
+
 
 }
