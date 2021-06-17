@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-signin-staff',
   templateUrl: './signin-staff.component.html',
@@ -26,11 +28,28 @@ export class SigninStaffComponent implements OnInit {
     this.authService.signInStaff(this.staff)
       .subscribe(
         res => {
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: `Welcome ${res.username}!!`,
+            showConfirmButton: false,
+            timer: 2000
+          });
           localStorage.setItem('token', res.token);
           localStorage.setItem('user', 'staff');
           this.router.navigate(['/staff']);
         },
-        err => console.log(err)
+        err => {
+          console.log(err)
+          var textError = err.error.message;
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `${textError}`
+          });
+          this.staff.username = '';
+          this.staff.password = '';
+        }
       )
   }
 }

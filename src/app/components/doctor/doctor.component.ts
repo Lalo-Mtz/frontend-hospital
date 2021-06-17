@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 // Our Process
 import { PatientService } from '../../services/patient.service';
 import { DoctorService } from '../../services/doctor.service';
-import { AuthService }  from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 import Swal from 'sweetalert2';
 
@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class DoctorComponent implements OnInit {
 
-  me = {};
+  me = { email: '', id: '', username: '' };
   idp = 1;  //Modific
 
   constructor(
@@ -31,7 +31,7 @@ export class DoctorComponent implements OnInit {
         },
         err => {
           console.log('Aqui error', err);
-          if(err.error.message == 'Email not verified'){
+          if (err.error.message == 'Email not verified') {
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
@@ -42,7 +42,7 @@ export class DoctorComponent implements OnInit {
           }
         }
       );
-    //this.consultPatient();
+    // this.consultPatient();
   }
 
   consultPatients() {

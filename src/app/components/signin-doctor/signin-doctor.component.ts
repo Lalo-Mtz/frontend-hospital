@@ -4,6 +4,8 @@ import { Router } from '@angular/router'
 // Our Process
 import { AuthService } from '../../services/auth.service';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-signin-doctor',
   templateUrl: './signin-doctor.component.html',
@@ -26,16 +28,27 @@ export class SigninDoctorComponent implements OnInit {
       .subscribe(
         res => {
           if (res.auth) {
-            
+            Swal.fire({
+              position: 'top',
+              icon: 'success',
+              title: `Welcome ${res.username}!!`,
+              showConfirmButton: false,
+              timer: 2000
+            });
             localStorage.setItem('token', res.token);
             localStorage.setItem('user', 'doctor');
-
-
             this.router.navigate(['/doctor']);
           }
         },
         err => {
-          console.log(err);
+          var textError = err.error.message;
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `${textError}`
+          });
+          this.doctor.email = '';
+          this.doctor.password = '';
         }
       )
   }

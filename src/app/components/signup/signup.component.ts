@@ -56,7 +56,12 @@ export class SignupComponent implements OnInit {
             });
           },
           err => {
-            console.log(err);
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: `${err.error.message}`,
+              footer: 'Use other email'
+            });
           }
         );
     }else{

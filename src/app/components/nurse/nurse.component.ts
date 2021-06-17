@@ -4,6 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { NurseService } from '../../services/nurse.service';
 import { PatientService } from '../../services/patient.service';
 
+
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-nurse',
   templateUrl: './nurse.component.html',
@@ -25,7 +28,7 @@ export class NurseComponent implements OnInit {
         res => {
           this.me = res;
         },
-        err => console.log(err)
+        err => {console.log(err)}
       );
   }
 

@@ -4,6 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { PatientService } from '../../services/patient.service';
 import { StaffService } from '../../services/staff.service';
 
+
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-staff',
   templateUrl: './staff.component.html',
