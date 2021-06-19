@@ -1,1 +1,279 @@
-<p>showpat works!</p>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="fa fa-star-o"></span><span>Hospital</span></h2>
+        </div>
+        <!--Secciones-del-tablero-->
+        <div class="sidebar-menu">
+            <ul>
+                <li >
+                    <a routerLink="/doctor" routerLinkActive="active" ><span class="fa fa-table"></span>
+                    <span>Tablero</span></a>
+                </li>
+                <li>
+                    <a (click)="topatient()"  routerLinkActive="active" class="active"><span class="fa fa-user"></span>
+                    <span>Informacion Del Paciente</span></a>
+                </li>
+                <li>
+                    <a (click)="toreceta()"  routerLinkActive="active" ><span class="fa fa-user"></span>
+                    <span>Recetas</span></a>
+                </li>
+                <li>
+                    <a (click)="toreceta()"  routerLinkActive="active" ><span class="fa fa-user"></span>
+                    <span>Resultados de Laboratorio</span></a>
+                </li>
+                <li>
+                    <a (click)="toreceta()"  routerLinkActive="active" ><span class="fa fa-user"></span>
+                    <span>Editar Informacion Del paciente</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <section id="Tablero">
+            <header>
+                <h2>
+                    <label for="nav-toggle">
+                        <span class="fa fa-bars"></span>
+                    </label> Tablero
+                </h2>
+    
+                <div class="user-wrapper">
+                    <img src="assets/p.jpg" width="40px" height="40px" alt="">
+                    <div>
+                        <h4>Brayan Capetillo</h4>
+                        <small>Dr general</small>
+                    </div>
+                </div>
+            </header>
+        </section>
+        <section id="infopaciente">
+    
+            <main>
+                <div class="dmtitle"><div><h1>Información Del paciente</h1></div><div><h1>Datos Personales </h1></div></div>
+                <div class="dmcard">
+                    <div class="dmimg">
+                        <img src="assets/p.jpg" alt=""/>
+
+                        
+                        <h1>Efrain Peralta Rodriguez</h1>
+                        <p><span class="fa fa-user"></span> Paciente</p>
+                        
+                    </div>
+                    <div class="dminfo">
+                        <div class="secciones">
+                        <h3>Nombre(s) <span class="fa fa-check-square-o"></span></h3>
+                        <p>Efrain</p>
+                        </div>
+
+                        <div class="secciones">
+                        <h3>Apellidos<span class="fa fa-check-square-o"></span></h3>
+                        <p>Peralta Rodriguez</p>
+                        </div>
+                        <div class="secciones">
+                        <h3>Fecha de Nacimiento <span class="fa fa-calendar"></span></h3>
+                        <p>12-05-2000</p>
+                        </div>
+                        <div class="secciones">
+                        <h3>Telefono <span class="fa fa-phone"></span></h3>
+                        <p>449 346 51 48</p>
+                        </div>
+                        <div class="secciones">
+                            <h3><a (click)="toeditpat()"  routerLinkActive="active" ><div class="colora"> Editar Informacion del paciente</div><span class="fa fa-pencil-square-o"></span></a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="histitle"><h1>Historia Clinica</h1></div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <td>Fecha de Consulta</td>
+                                    <td>Peso</td>
+                                    <td>Talla</td>
+                                    <td>Temperatura</td>
+                                    <td>Presion Arterial</td>
+                                    <td>Pulso Cardiaco</td>
+                                    <td>Observaciones/ notas</td>
+                                    <td>Receta</td>
+                                    <td>Resultados de Laboratorio</td>
+                                    
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   <td>25-02-2020</td>
+                                   <td>57 kg</td>
+                                   <td>1.68 m</td>
+                                   <td>35.6 °</td>
+                                   <td>104 / 75</td>
+                                   <td>85 / 60</td>
+                                   <td>Presion algo elebada</td>
+                                   <td><a href="">Receta 01</a></td>
+                                   <td><a href="">Lab 01</a></td>
+                                </tr>
+                                <tr>
+                                    <td>26-04-2020</td>
+                                   <td>54 kg</td>
+                                   <td>1.68 m</td>
+                                   <td>37.6 °</td>
+                                   <td>104 / 75</td>
+                                   <td>85 / 60</td>
+                                   <td>temperatura poco alta</td>
+                                   <td><a href="">Receta 02</a></td>
+                                   <td><a href="">Lab 02</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>25-06-2020</td>
+                                   <td>60 kg</td>
+                                   <td>1.68 m</td>
+                                   <td>36.6 °</td>
+                                   <td>110 / 75</td>
+                                   <td>80 / 60</td>
+                                   <td>presion alta</td>
+                                   <td><a href="">Receta 03</a></td>
+                                   <td><a href="">Lab 03</a></td>
+                                </tr>
+                                <tr>
+                                    <td>25-08-2020</td>
+                                    <td>59 kg</td>
+                                    <td>1.68 m</td>
+                                    <td>36.8 °</td>
+                                    <td>100 / 75</td>
+                                    <td>90 / 60</td>
+                                    <td>latidos por minuto algo elevados sobre lo normal</td>
+                                    <td><a href="">Receta 04</a></td>
+                                    <td><a href="">Lab 04</a></td>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+
+        </section>
+
+        <section id="recetas">
+            <main>
+                <div class="histitle"><h1>Receta</h1></div>
+                <div class="contentreceta">
+                    <div class="recetahead">
+                        <div class="img1">
+                            <img src="assets/img1.png" alt="">
+                        </div>
+                        <div class="titulo">
+                            <h1>Brayan Capetillo Macias</h1>
+                            <p>Medico General</p>
+                        </div>
+                        <div class="img2">
+                            <img src="assets/img2.jfif" alt="">
+                        </div>
+                    </div>
+                    <div class="recetahead2">
+                        <div>
+                            Dispensario Medico : El Niño Doctor
+                        </div>
+                        <div>
+                            Cedula Estatal No 01002587120440
+                        </div>
+                    </div>
+                    <div class="barrasep"></div>
+                    <div class="recetabody">
+                        <div>
+                            Receta Individual
+                        </div>
+                        <div>
+                            Fecha: 03 / 09 / 2021
+                        </div>
+
+                    </div>
+                    <div class="recetabody">
+                        <div>
+                            Nombre del paciente: Efrain Peralta Rodriguez
+                        </div>
+                        <div>
+                            Edad : 20 anios
+                        </div>
+
+                    </div>
+                    <div class="contentbody">
+
+                        Medicamento(s): Doloneurobion- Forte
+                        <ul>
+                        <li>Teme 1 Capsula cada 12 horas por 15 días.</li>
+
+                        <li>Sustancia activa: Diclofenaco /Tiamina /Piridoxina/ Cianocobalamina.</li>
+
+                        <li>Indicaciones: Evitar tensiones, situaciones de estrés, y descansar seguido.</li>
+
+                        <li>Dieta: No hay dieta, se puede comer lo habitual.</li>
+                        </ul>
+
+                    </div>
+                    <div class="barrasep"></div> 
+                    <div class="recetafot">
+                        las parras No.415 colonia los pedritos, AGS. Tel 449 346 51 48. brayancapetoccc@gmail.com
+                    </div>
+
+
+                </div>
+            </main>
+        </section>
+
+        <section id="Editarinfo">
+            <main>
+            <div class="card-body">
+                <div class="histitle"><h1>Editando Datos Paciente</h1></div>
+                <div class="table-responsive">
+                    <form action="">
+                    <table class="tabla2" width="80%">
+                        <thead>
+                            <tr>
+                                <td>Datos</td>
+                                <td>Editar</td>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nombre(s) <span class="fa fa-check-square-o"></span></td>
+                                <td><input type="text" name="" value="Efrain"  required><span class="fa fa-pencil-square-o end"> </span></td>
+                            </tr>
+                            <tr>
+                                <td>Apellidos <span class="fa fa-text-width"></span></td>
+                                <td><input type="text" name="" value="Peralta Rodriguez"  required><span class="fa fa-pencil-square-o end"> </span></td>
+                            </tr>
+                            <tr>
+                                <td>Fecha de Nacimiento <span class="fa fa-text-width"></span></td>
+                                <td><input type="date" name="" value="2000-10-20"  required></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Telefono <span class="fa fa-phone"></span></td>
+                                <td><input type="text" name="" value="449 346 51 48"  required><span class="fa fa-pencil-square-o end"> </span></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+
+                    <div class="btnedit">
+                        <input type="submit" value="Cancelar">
+                        <input type="submit" value="Guardar Cambios">
+                    </div>
+                </form>
+                </div>
+                
+            </div>
+        </main>
+        </section>
+       
+    </div>
+
+</body>

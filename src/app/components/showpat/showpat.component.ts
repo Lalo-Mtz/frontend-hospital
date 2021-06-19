@@ -12,4 +12,13 @@ export class ShowpatComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  topatient(){
+    document.getElementById("infopaciente")?.scrollIntoView({behavior:"smooth"});
+  }
+  toreceta(){
+    document.getElementById("recetas")?.scrollIntoView({behavior:"smooth"});
+  }
+  toeditpat(){
+    document.getElementById("Editarinfo")?.scrollIntoView({behavior:"smooth"});
+  }
 }

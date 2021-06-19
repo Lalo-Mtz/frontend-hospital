@@ -199,6 +199,10 @@ thead td {
     height: 50px;
 }
 
+span.end{
+    color: #0051ff;
+}
+
 td {
     padding: .5rem 1rem;
     font-size: .9rem;
@@ -209,7 +213,7 @@ td {
 td input{
     border-color: transparent;
     max-width: 600px;
-    min-width: 200px;
+    min-width: 300px;
     color: #6200ff;
 }
 

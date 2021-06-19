@@ -79,8 +79,8 @@ export class DoctorComponent implements OnInit {
     document.getElementById("pacientes")?.scrollIntoView({behavior:"smooth"});
   }
 
-  toexpediente(){
-    document.getElementById("expediente")?.scrollIntoView({behavior:"smooth"});
+  torecetas(){
+    document.getElementById("recetas")?.scrollIntoView({behavior:"smooth"});
   }
 
   tohistorial(){

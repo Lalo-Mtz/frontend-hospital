@@ -11,7 +11,6 @@ import { SigninDoctorComponent } from './components/signin-doctor/signin-doctor.
 import { SigninNurseComponent } from './components/signin-nurse/signin-nurse.component';
 import { SigninStaffComponent } from './components/signin-staff/signin-staff.component';
 import { EditdocComponent } from './components/editdoc/editdoc.component';
-import { EditpatComponent } from './components/editpat/editpat.component';
 import { ShowpatComponent } from './components/showpat/showpat.component';
 
 import { AuthGuard } from './guard/auth.guard';
@@ -29,7 +28,6 @@ const routes: Routes = [
   { path: 'signin-nurse', component: SigninNurseComponent },
   { path: 'signin-staff', component: SigninStaffComponent },
   { path: 'editdoc', component: EditdocComponent },
-  { path: 'editpat' , component:EditpatComponent},
   { path: 'showpat' , component:ShowpatComponent}
 
 ];
