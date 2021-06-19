@@ -19,6 +19,9 @@ import { AuthGuard } from './guard/auth.guard';
 import { NurseGuard } from './guard/nurse.guard';
 import { StaffGuard } from './guard/staff.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { EditdocComponent } from './components/editdoc/editdoc.component';
+import { EditpatComponent } from './components/editpat/editpat.component';
+import { ShowpatComponent } from './components/showpat/showpat.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     SignupComponent,
     SigninDoctorComponent,
     SigninNurseComponent,
-    SigninStaffComponent
+    SigninStaffComponent,
+    EditdocComponent,
+    EditpatComponent,
+    ShowpatComponent
   ],
   imports: [
     BrowserModule,
