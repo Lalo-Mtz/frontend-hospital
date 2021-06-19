@@ -22,14 +22,14 @@ export class SignupComponent implements OnInit {
   }
 
   signUp(): void {
-    this.authService.signUp(this.user)
-      .subscribe(
-        res => {
-          localStorage.setItem('token', res.token)
-          this.router.navigate(['/doctor']);
-        },
-        err => console.log(err)
-      )
+    // this.authService.signUp(this.user)
+    //   .subscribe(
+    //     res => {
+    //       localStorage.setItem('token', res.token)
+    //       this.router.navigate(['/doctor']);
+    //     },
+    //     err => console.log(err)
+    //   )
     
 
     if (this.user.username != '' && this.user.email != '' && this.user.password != '') {

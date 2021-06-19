@@ -1,4 +1,3 @@
-
 <body>
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
@@ -8,29 +7,30 @@
         <!--Secciones-del-tablero-->
         <div class="sidebar-menu">
             <ul>
-                <li >
-                    <a (click)="totable()" routerLink="/doctor" routerLinkActive="active" ><span class="fa fa-table"></span>
-                    <span>Tablero</span></a>
+                <li>
+                    <a (click)="totable()" routerLink="/doctor" routerLinkActive="active"><span
+                            class="fa fa-table"></span>
+                        <span>Tablero</span></a>
                 </li>
                 <li>
-                    <a (click)="todoctorme()"  routerLinkActive="active" ><span class="fa fa-user-md"></span>
-                    <span>Yo merengues</span></a>
+                    <a (click)="todoctorme()" routerLinkActive="active"><span class="fa fa-user-md"></span>
+                        <span>Yo merengues</span></a>
                 </li>
                 <li>
                     <a (click)="topacientes()" routerLinkActive="active"><span class="fa fa-user"></span>
-                    <span>Pacientes</span></a>
+                        <span>Pacientes</span></a>
                 </li>
                 <li>
                     <a (click)="tohistorial()" routerLinkActive="active"><span class="fa fa-address-card"></span>
-                    <span>Historial de Consulta</span></a>
+                        <span>Historial de Consulta</span></a>
                 </li>
                 <li>
                     <a (click)="toexpediente()" routerLinkActive="active"><span class="fa fa-id-card"></span>
-                    <span>Expediente Clinico</span></a>
+                        <span>Expediente Clinico</span></a>
                 </li>
                 <li>
                     <a (click)="topacientes()" routerLinkActive="active"><span class="fa fa-address-card-o"></span>
-                    <span>Recetas</span></a>
+                        <span>Recetas</span></a>
                 </li>
             </ul>
         </div>
@@ -39,92 +39,111 @@
 
     <div class="main-content">
         <section id="Tablero">
-        <header>
-            <h2>
-                <label for="nav-toggle">
-                    <span class="fa fa-bars"></span>
-                </label> Tablero
-            </h2>
+            <header>
+                <h2>
+                    <label for="nav-toggle">
+                        <span class="fa fa-bars"></span>
+                    </label> Tablero
+                </h2>
 
-            <div class="search-wrapper">
-                <span class="fa fa-search"></span>
-                <input type="search" placeholder="Buscar aquí" />
-            </div>
-            <div class="user-wrapper">
-                <img src="assets/p.jpg" width="40px" height="40px" alt="">
-                <div>
-                    <h4>Brayan Capetillo</h4>
-                    <small>Dr general</small>
+                <div class="search-wrapper">
+                    <span class="fa fa-search"></span>
+                    <input type="search" placeholder="Buscar aquí" />
                 </div>
-            </div>
-        </header>
-
-        <main>
-            <div class="cards">
-
-                <div class="card-single">
+                <div class="user-wrapper">
+                    <img src="assets/p.jpg" width="40px" height="40px" alt="">
                     <div>
-                        <h1>5</h1>
-                        <span>Menejo de pacientes</span>
-                    </div>
-                    <div>
-                        <span class="fa fa-users"></span>
+                        <h4>{{me.username}}</h4>
+                        <small>{{me.type}}</small>
                     </div>
                 </div>
+            </header>
 
-                <div class="card-single">
-                    <div>
-                        <h1>12</h1>
-                        <span>Menejo de doctores</span>
-                    </div>
-                    <div>
-                        <span class="fa fa-user-md"></span>
-                    </div>
-                </div>
+            <main>
+                <div class="cards">
 
-                <div class="card-single">
-                    <div>
-                        <h1>25</h1>
-                        <span>Expedientes</span>
-                    </div>
-                    <div>
-                        <span class="fa fa-file-text-o"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>2</h1>
-                        <span>Consultas Realizadas</span>
-                    </div>
-                    <div>
-                        <span class="fa fa-heart"></span>
-                    </div>
-                </div>
-            </div>
-            <!--Tabla-->
-            <div class="recent-grid">
-                <div class="projects">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Pacientes recientes</h3>
-
-                            <button>Mostrar todo <span class="las la-arrow-right">
-                            </span></button>
+                    <div class="card-single">
+                        <div>
+                            <h1>{{me.id}}</h1>
+                            <span>ID de doctor</span>
                         </div>
+                        <div>
+                            <span class="fa fa-user-md"></span>
+                        </div>
+                    </div>
 
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table width="100%">
-                                    <thead>
-                                        <tr>
-                                            <td>Nombre</td>
-                                            <td>Apellido</td>
-                                            <td>Estado</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
+                    <div class="card-single">
+                        <div>
+                            <h1>{{dashboar.num_p}}</h1>
+                            <span>Menejo de pacientes</span>
+                        </div>
+                        <div>
+                            <span class="fa fa-users"></span>
+                        </div>
+                    </div>
+
+                    <div class="card-single">
+                        <div>
+                            <h1>{{dashboar.num_w}}</h1>
+                            <span>Atendidos esta semana</span>
+                        </div>
+                        <div>
+                            <span class="fa fa-file-text-o"></span>
+                        </div>
+                    </div>
+
+                    <div class="card-single">
+                        <div>
+                            <h1>{{dashboar.num_c}}</h1>
+                            <span>Consultas Realizadas</span>
+                        </div>
+                        <div>
+                            <span class="fa fa-heart"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--Tabla-->
+                <div class="recent-grid">
+                    <div class="projects">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Pacientes recientes</h3>
+
+                                <button>Mostrar todo <span class="las la-arrow-right">
+                                    </span></button>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table width="100%">
+                                        <thead>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                <td>Apellido</td>
+                                                <td>Estado</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <ng-container *ngIf="confirmPatients(); else existPatients">
+                                                <tr *ngFor="let patient of patients; index as i">
+                                                    <td>{{patient.name}}</td>
+                                                    <td>{{patient.surnames}}</td>
+                                                    <td>
+                                                        <span class="status green"></span> Bueno
+                                                    </td>
+                                                </tr>
+                                            </ng-container>
+
+                                            <ng-template #existPatients>
+                                                <tr>
+                                                    <td>Aun no has</td>
+                                                    <td>Atendido a</td>
+                                                    <td>Ningun paciente</td>
+                                                </tr>
+
+                                            </ng-template>
+
+                                            <!-- <tr>
                                             <td>Brayan</td>
                                             <td>Capetillo macias</td>
                                             <td>
@@ -151,144 +170,146 @@
                                             <td>
                                                 <span class="status green"></span> Bueno
                                             </td>
-                                        </tr>
+                                        </tr> -->
 
 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="customers">
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Peticiones de Consulta</h3>
-
-                            <button>Mostrar todo <span class="fa fa-bell">
-                            </span></button>
-                        </div>
-
-                        <div class="card-body">
-
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="assets/staff.jpg" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Pedro Fernandez</h4>
-                                        <small>Diarrea</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="fa fa-user-circle purple"></span>
-                                    <span class="fa fa fa-phone green"></span>
-                                    <span class="fa fa fa-phone red"></span>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
 
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="assets/staff.jpg" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Pedro Fernandez</h4>
-                                        <small>Diarrea</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="fa fa-user-circle purple"></span>
-                                    <span class="fa fa fa-phone green"></span>
-                                    <span class="fa fa fa-phone red"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="assets/staff.jpg" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Pedro Fernandez</h4>
-                                        <small>Diarrea</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="fa fa-user-circle purple"></span>
-                                    <span class="fa fa fa-phone green"></span>
-                                    <span class="fa fa fa-phone red"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="assets/staff.jpg" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Pedro Fernandez</h4>
-                                        <small>Diarrea</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="fa fa-user-circle purple"></span>
-                                    <span class="fa fa fa-phone green"></span>
-                                    <span class="fa fa fa-phone red"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="assets/staff.jpg" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Pedro Fernandez</h4>
-                                        <small>Diarrea</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="fa fa-user-circle purple"></span>
-                                    <span class="fa fa fa-phone green"></span>
-                                    <span class="fa fa fa-phone red"></span>
-                                </div>
-                            </div>
-
-
-                            
                         </div>
                     </div>
+
+                    <div class="customers">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Peticiones de Consulta</h3>
+
+                                <button>Mostrar todo <span class="fa fa-bell">
+                                    </span></button>
+                            </div>
+
+                            <div class="card-body">
+
+                                <div class="customer">
+                                    <div class="info">
+                                        <img src="assets/staff.jpg" width="40px" height="40px" alt="">
+                                        <div>
+                                            <h4>Pedro Fernandez</h4>
+                                            <small>Diarrea</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="fa fa-user-circle purple"></span>
+                                        <span class="fa fa fa-phone green"></span>
+                                        <span class="fa fa fa-phone red"></span>
+                                    </div>
+                                </div>
+
+                                <div class="customer">
+                                    <div class="info">
+                                        <img src="assets/staff.jpg" width="40px" height="40px" alt="">
+                                        <div>
+                                            <h4>Pedro Fernandez</h4>
+                                            <small>Diarrea</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="fa fa-user-circle purple"></span>
+                                        <span class="fa fa fa-phone green"></span>
+                                        <span class="fa fa fa-phone red"></span>
+                                    </div>
+                                </div>
+                                <div class="customer">
+                                    <div class="info">
+                                        <img src="assets/staff.jpg" width="40px" height="40px" alt="">
+                                        <div>
+                                            <h4>Pedro Fernandez</h4>
+                                            <small>Diarrea</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="fa fa-user-circle purple"></span>
+                                        <span class="fa fa fa-phone green"></span>
+                                        <span class="fa fa fa-phone red"></span>
+                                    </div>
+                                </div>
+                                <div class="customer">
+                                    <div class="info">
+                                        <img src="assets/staff.jpg" width="40px" height="40px" alt="">
+                                        <div>
+                                            <h4>Pedro Fernandez</h4>
+                                            <small>Diarrea</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="fa fa-user-circle purple"></span>
+                                        <span class="fa fa fa-phone green"></span>
+                                        <span class="fa fa fa-phone red"></span>
+                                    </div>
+                                </div>
+                                <div class="customer">
+                                    <div class="info">
+                                        <img src="assets/staff.jpg" width="40px" height="40px" alt="">
+                                        <div>
+                                            <h4>Pedro Fernandez</h4>
+                                            <small>Diarrea</small>
+                                        </div>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="fa fa-user-circle purple"></span>
+                                        <span class="fa fa fa-phone green"></span>
+                                        <span class="fa fa fa-phone red"></span>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                
-            </div>
-        </main>
+            </main>
         </section>
-        
+
         <section id="doctorme">
-    
+
             <main>
-                <div class="dmtitle"><h1>Mi Información</h1></div>
+                <div class="dmtitle">
+                    <h1>Mi Información</h1>
+                </div>
                 <div class="dmcard">
                     <div class="dminfo">
                         <div class="secciones">
-                        <h3>Correo Electronico <span class="fa fa-envelope"></span></h3>
-                        <p>Brayancapetoccc@gmail.com</p>
+                            <h3>Correo Electronico <span class="fa fa-envelope"></span></h3>
+                            <p>{{me.email}}</p>
                         </div>
 
                         <div class="secciones">
-                        <h3>Pais<span class="fa fa-globe"></span></h3>
-                        <p>Mexico</p>
+                            <h3>Pais<span class="fa fa-globe"></span></h3>
+                            <p>{{me.country}}</p>
                         </div>
                         <div class="secciones">
-                        <h3>Universidad <span class="fa fa-university"></span></h3>
-                        <p>BUAA</p>
+                            <h3>Universidad <span class="fa fa-university"></span></h3>
+                            <p>{{me.college}}</p>
                         </div>
                         <div class="secciones">
-                        <h3>Telefono <span class="fa fa-phone"></span></h3>
-                        <p>449 346 51 48</p>
+                            <h3>Telefono <span class="fa fa-phone"></span></h3>
+                            <p>{{me.phone}}</p>
                         </div>
 
 
                     </div>
                     <div class="dmimg">
-                        <img src="assets/e.jpg" alt=""/>
+                        <img src="assets/e.jpg" alt="" />
 
-                        
-                        <h1>Brayan Capetillo Macias</h1>
-                        <p><span class="fa fa-user-md"></span> Medico General</p>
-                        
+
+                        <h1>{{me.username}}</h1>
+                        <p><span class="fa fa-user-md"></span>{{me.type}}</p>
+
                     </div>
                 </div>
             </main>
@@ -297,7 +318,9 @@
 
         <section id="pacientes">
             <main>
-                <div class="histitle"><h1>Pacientes</h1></div>
+                <div class="histitle">
+                    <h1>Pacientes</h1>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table width="100%">
@@ -321,7 +344,7 @@
                                     <td>
                                         <span class="status green"></span> Bueno
                                     </td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>021420</td>
@@ -364,7 +387,9 @@
         </section>
         <section id="historial">
             <main>
-                <div class="histitle"><h1>Historial de Consultas</h1></div>
+                <div class="histitle">
+                    <h1>Historial de Consultas</h1>
+                </div>
 
                 <div class="hissub">
                     <h1>Nombre de paciente</h1>
@@ -379,39 +404,39 @@
                                     <td>ID Consulta</td>
                                     <td>Fecha de Consulta</td>
                                     <td>Estado</td>
-                                    <td>Observaciones/ notas</td>
+                                    <td>Motivo</td>
                                     <td>Receta</td>
-                                    
-                                    
+
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>0001</td>
                                     <td>25-20-2020</td>
-                                    
+
                                     <td>
                                         <span class="status green"></span> Bueno
                                     </td>
                                     <td>tos</td>
                                     <td><a href="">Receta 0001</a></td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>0002</td>
                                     <td>25-20-2020</td>
-                                    
+
                                     <td>
                                         <span class="status green"></span> Bueno
                                     </td>
                                     <td>covid</td>
                                     <td><a href="">Receta 0002</a></td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>0003</td>
                                     <td>25-20-2020</td>
-                                    
+
                                     <td>
                                         <span class="status green"></span> Bueno
                                     </td>
@@ -420,7 +445,7 @@
                                 <tr>
                                     <td>0004</td>
                                     <td>25-20-2020</td>
-                                    
+
                                     <td>
                                         <span class="status green"></span> Bueno
                                     </td>
@@ -435,11 +460,13 @@
             </main>
 
         </section>
-        
+
 
         <section id="expediente">
             <main>
-                <div class="histitle"><h1>Expediente Clinico</h1></div>
+                <div class="histitle">
+                    <h1>Expediente Clinico</h1>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table width="100%">

@@ -27,7 +27,7 @@ export class SigninDoctorComponent implements OnInit {
     this.authService.signIn(this.doctor)
       .subscribe(
         res => {
-          if (res.auth) {
+          if (res.auth && res.verify) {
             Swal.fire({
               position: 'top',
               icon: 'success',
@@ -38,6 +38,13 @@ export class SigninDoctorComponent implements OnInit {
             localStorage.setItem('token', res.token);
             localStorage.setItem('user', 'doctor');
             this.router.navigate(['/doctor']);
+          }else{
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: "Your email isn't verified yet",
+              footer: 'Check it out email'
+            });
           }
         },
         err => {

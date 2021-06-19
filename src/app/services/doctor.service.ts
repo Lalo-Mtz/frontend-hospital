@@ -15,4 +15,8 @@ export class DoctorService {
   getInfo(){
     return this.http.get<any>(this.URL);
   }
+
+  getTablero(){
+    return this.http.get<any>(this.URL + '/dashboard');
+  }
 }
