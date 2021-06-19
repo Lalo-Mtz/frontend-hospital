@@ -10,7 +10,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SigninDoctorComponent } from './components/signin-doctor/signin-doctor.component';
 import { SigninNurseComponent } from './components/signin-nurse/signin-nurse.component';
 import { SigninStaffComponent } from './components/signin-staff/signin-staff.component';
-
+import { EditdocComponent } from './components/editdoc/editdoc.component';
+import { ShowpatComponent } from './components/showpat/showpat.component';
 
 import { AuthGuard } from './guard/auth.guard';
 import { NurseGuard } from './guard/nurse.guard';
@@ -26,6 +27,9 @@ const routes: Routes = [
   { path: 'signin-doctor', component: SigninDoctorComponent },
   { path: 'signin-nurse', component: SigninNurseComponent },
   { path: 'signin-staff', component: SigninStaffComponent },
+  { path: 'editdoc', component: EditdocComponent },
+  { path: 'showpat' , component:ShowpatComponent}
+
 ];
 
 @NgModule({
