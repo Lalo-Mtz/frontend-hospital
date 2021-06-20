@@ -464,6 +464,9 @@ td input{
     padding: 2%;
 }
 
+.dmimg h1{
+    font-size: 2.5rem;
+}
 
 @media only screen and (max-width: 1200px) {
     .sidebar {
