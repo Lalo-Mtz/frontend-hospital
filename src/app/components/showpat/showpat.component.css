@@ -14,6 +14,12 @@
 #infopaciente{
     padding-top: 100px;
 }
+#reslab{
+    padding-top: 20px;
+}
+#recetas{
+    padding-top: 40px;
+}
 
 .sidebar {
     margin-top: 80px;
@@ -403,6 +409,53 @@ td input{
     color: rgb(0, 140, 255);
     cursor: pointer;
 }
+
+.contentlab{
+    border: 2px solid #6200ff;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.headerlab{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0 20px;
+    align-items: center;
+}
+
+.headerlab img{
+    width: 200px;
+    height: 200px;
+}
+.tablalab1{
+    padding: 2%;
+}
+
+.tablalab1 table{
+    width: 100%;
+}
+
+.infolab{
+    display: flex;
+    justify-content: space-around;
+}
+
+.fotterlab{
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.firmalab{
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.infofotterlab{
+    text-align: right;
+    padding: 2%;
+}
+
 
 @media only screen and (max-width: 1200px) {
     .sidebar {

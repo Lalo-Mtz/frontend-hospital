@@ -21,16 +21,19 @@
                     <span>Recetas</span></a>
                 </li>
                 <li>
-                    <a (click)="toreceta()"  routerLinkActive="active" ><span class="fa fa-user"></span>
+                    <a (click)="toreslab()"  routerLinkActive="active" ><span class="fa fa-user"></span>
                     <span>Resultados de Laboratorio</span></a>
                 </li>
                 <li>
-                    <a (click)="toreceta()"  routerLinkActive="active" ><span class="fa fa-user"></span>
+                    <a (click)="toeditpat()"  routerLinkActive="active" ><span class="fa fa-user"></span>
                     <span>Editar Informacion Del paciente</span></a>
                 </li>
             </ul>
         </div>
     </div>
+
+    
+
     <div class="main-content">
         <section id="Tablero">
             <header>
@@ -226,6 +229,174 @@
                 </div>
             </main>
         </section>
+        <section id="reslab">
+            <main>
+                <div class="histitle"><h1>Resultados de laboratorio</h1></div>
+                <div class="contentlab">
+                    <div class="headerlab">
+                        <div><img src="assets/img1.png" alt=""> </div>
+                        <div>
+                            <h1>Dr. brayan de jesus capetillo macias</h1>
+                            <p>STAR SEGUROS SA DE CV</p>
+                            <P>F. Alta : 20/06/2020</P>
+                            <P>F. impresion : 20/06/2020</P>
+                            <P>estudio: 1 de 1</P>
+                        </div>
+                    </div>
+                    <div class="barrasep"></div>
+
+                    <div class="tablaslab1">
+                        <div class="tablalab1">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>ANALSIS DE ORINA</td>
+                                        <td>RESULTADO</td>
+                                        <td>VALOR DE REFERENCIA</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Color </td>
+                                        <td>Amarillo palido</td>
+                                        <td>none</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aspecto</td>
+                                        <td>Turbio</td>
+                                        <td>Transparente</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Sedimento</td>
+                                        <td>Abundante</td>
+                                        <td>Escaso</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gravedad Especifica</td>
+                                        <td>1.009</td>
+                                        <td>1.005 - 1.035</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PH</td>
+                                        <td>7.0</td>
+                                        <td>5.0 - 7.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Proteinas (Albumina) mg/dL</td>
+                                        <td>Negativo</td>
+                                        <td>Negativo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Glucosa, mg /dL</td>
+                                        <td>Negativo</td>
+                                        <td>Negativo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hemoglobina, mg /dL</td>
+                                        <td>10</td>
+                                        <td>Negativo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bilirrubina, mg /dL</td>
+                                        <td>Negativo</td>
+                                        <td>Negativo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cetonas, mg /dL</td>
+                                        <td>Negativo</td>
+                                        <td>Negativo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nitritos</td>
+                                        <td>Negativo</td>
+                                        <td>Negativo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Urobilinogeno, mg /dL</td>
+                                        <td>Negativo</td>
+                                        <td>Negativo ( << = 1.0)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EST. Leucocitaria, mg /dL</td>
+                                        <td>Negativo</td>
+                                        <td>Negativo</td>
+                                    </tr>
+    
+    
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tablalab1">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>EXAMEN MICROSCOPICO</td>
+                                        <td>RESULTADO , uL</td>
+                                        <td>RESULTADO p/Campo</td>
+                                        <td>VALOR DE REFERENCIA</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Eritrocitos </td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>Menor a 2 p/campo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leucocitros</td>
+                                        <td>18</td>
+                                        <td>5</td>
+                                        <td>0 - 2 p/campo</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Bacterias</td>
+                                        <td>1000.0</td>
+                                        <td>Abundantes (+++)</td>
+                                        <td>none</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Celulas Epiteliales</td>
+                                        <td>15.0</td>
+                                        <td>Escasas (+)</td>
+                                        <td>none</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="infolab">
+                        <div>
+                            <h6>OTROS HALLAZGOS</h6>
+                            <br>
+                            Mucina
+
+                        </div>
+                        <div>
+                            <h6>Resultado</h6>
+                            <br>
+                            AUSENTE
+                        </div>
+                    </div>
+
+                    <div class="fotterlab">
+                        <div class="firmalab">
+                            FIRMA ELECTRONICA DEL DOCTOR : 203975
+                        </div>
+                        <div class="barrasep"></div>
+                        <div class="infofotterlab">
+                            las parras No.415 colonia los pedritos, AGS. Tel 449 346 51 48. brayancapetoccc@gmail.com
+                        </div>
+                    </div>
+                    
+
+
+                </div>
+
+            </main>
+        </section>
 
         <section id="Editarinfo">
             <main>
@@ -272,7 +443,7 @@
                 
             </div>
         </main>
-        </section>
+        </section> 
        
     </div>
 
