@@ -422,10 +422,18 @@ td input{
     padding: 20px 0 20px;
     align-items: center;
 }
+.headerlab h1{
+    font-family: 'cursiva';
+    font-size: 5rem;
+}
 
+.headerlab p{
+    font-size: 1rem;
+
+}
 .headerlab img{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 .tablalab1{
     padding: 2%;
@@ -586,5 +594,14 @@ td input{
     }
     .tabla2{
         margin-left: 0%;
+    }
+    .headerlab{
+        display: block;
+    }
+    .recetahead{
+        display: block;
+    }
+    .recetahead2{
+        display: block;
     }
 }
