@@ -1,1 +1,123 @@
-<p>staff works!</p>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="fa fa-star-o"></span><span>Hospital</span></h2>
+        </div>
+        <!--Secciones-del-tablero-->
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a (click)="topatient()"  routerLinkActive="active" class="active"><span class="fa fa-user"></span>
+                    <span>Pacientes</span></a>
+                </li>
+                <li>
+                    <a (click)="toagregar()"  routerLinkActive="active" ><span class="fa fa-user"></span>
+                    <span>Agregar Paciente</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        
+        <section id="pacientes">
+            <main>
+
+                <div class="card-body">
+                        <div class="titulonurse">
+                            <h1>Pacientes</h1>
+                        </div>
+                        <div class="wrapperpat">
+
+                            <!-- <ng-container *ngIf="confirmDocPatients(); else existDocPatients"> -->
+                                <ng-container>
+                                <!-- <div class="cardpat" *ngFor="let docPat of docPatients; index as i;"> -->
+                                    <div class="cardpat">
+                                    <img src="assets/e.jpg" alt="">
+                                    <div class="name">
+                                        <!-- <h1>{{docPat.name + " " + docPat.surnames}}</h1> -->
+                                        <h1>Lalo Martinez</h1>
+                                        <!-- <a (click)="seePatient(i)" routerLinkActive="active" class="btn">Ver paciente</a> -->
+                                        <a routerLink="/showpat" routerLinkActive="active" class="btn">Ver paciente</a>
+                                    </div>
+                                </div>
+                                <div class="cardpat">
+                                    <img src="assets/add.png" alt="">
+                                    <div class="name">
+                                        <!-- <h1>{{docPat.name + " " + docPat.surnames}}</h1> -->
+                                        <h1>Agregar Paciente</h1>
+                                        <!-- <a (click)="seePatient(i)" routerLinkActive="active" class="btn">Ver paciente</a> -->
+                                        <a routerLinkActive="active" class="btn"> Agregar P <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                
+                            </ng-container>
+
+                            <!-- <ng-template #existDocPatients> -->
+                                <ng-template>
+                                <h3 style="text-align: center;">No atiendes a ningún paciente</h3>
+                                
+
+                            </ng-template>
+
+                            <!-- <div class="cardpat">
+                                <img src="assets/e.jpg" alt="">
+                                <div class="name">
+                                    <h1>efrain peralta</h1>
+                                    <a routerLink="/showpat" routerLinkActive="active" class="btn">ver paciente</a>
+                                </div>
+                            </div> -->
+
+                        </div>
+                    </div>
+            </main>
+        </section>
+
+        <section id="agregarpaciente">
+            <main>
+                <div class="histitle">
+                    <h1>Agregando un nuevo Paciente</h1>
+                </div>
+                <div class="table-responsive">
+                <form>
+                    <table height="80%" width="100%">
+                        <thead>
+                            <tr>
+                                <td>Datos</td>
+                                <td>Editar</td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nombre <span class="fa fa-text-width"></span></td>
+                                <td><input type="text" name="username" placeholder="nombre" required><span
+                                        class="fa fa-pencil-square-o end"> </span></td>
+                            </tr>
+                            <tr>
+                                <td>Apellidos <span class="fa fa-text-width"></span></td>
+                                <td><input type="text" name="username" placeholder="apellidos" required><span
+                                        class="fa fa-pencil-square-o end"> </span></td>
+                            </tr>
+                            <tr>
+                                <td>Fecha de Nacimiento <span class="fa fa-envelope"></span></td>
+                                <td><input type="date" name="" placeholder="2000-10-20" required><span
+                                        class="fa fa-pencil-square-o end"> </span></td>
+                            </tr>
+                            <tr>
+                                <td>Telefono <span class="fa fa-globe"></span></td>
+                                <td><input type="text" name="" placeholder="449 879 52 14" required><span
+                                        class="fa fa-pencil-square-o end"> </span></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </form>
+                </div>
+            </main>
+        </section>
+
+    </div>
+
+</body>

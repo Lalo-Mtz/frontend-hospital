@@ -22,6 +22,18 @@ export class NurseComponent implements OnInit {
     private patientService: PatientService
   ) { }
 
+  topatient() {
+    document.getElementById("pacientes")?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  toagregar() {
+    document.getElementById("agregarpaciente")?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  toagregarconsulta() {
+    document.getElementById("agregarconsulta")?.scrollIntoView({ behavior: "smooth" });
+  }
+
   ngOnInit(): void {
     this.nurseService.getInfo()
       .subscribe(

@@ -22,6 +22,16 @@ export class StaffComponent implements OnInit {
     private staffService: StaffService 
   ) { }
 
+
+
+  topatient() {
+    document.getElementById("pacientes")?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  toagregar() {
+    document.getElementById("agregarpaciente")?.scrollIntoView({ behavior: "smooth" });
+  }
+
   ngOnInit(): void {
     this.staffService.getInfo()
       .subscribe(
