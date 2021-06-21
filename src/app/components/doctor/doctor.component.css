@@ -301,15 +301,15 @@ tr td:last-child {
     align-items: center;
 }
 
-.status.green {
+.status.Bajo {
     background: rgb(6, 192, 6);
 }
 
-.status.yellow {
+.status.Medio {
     background: yellow;
 }
 
-.status.red {
+.status.Alto {
     background: red;
 }
 

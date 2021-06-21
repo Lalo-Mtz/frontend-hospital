@@ -22,28 +22,11 @@ export class SignupComponent implements OnInit {
   }
 
   signUp(): void {
-    // this.authService.signUp(this.user)
-    //   .subscribe(
-    //     res => {
-    //       localStorage.setItem('token', res.token)
-    //       this.router.navigate(['/doctor']);
-    //     },
-    //     err => console.log(err)
-    //   )
-    
-
     if (this.user.username != '' && this.user.email != '' && this.user.password != '') {
       this.authService.signUp(this.user)
         .subscribe(
           res => {
             this.router.navigate(['/doctor']);
-            // Swal.fire({
-            //   position: 'top-end',
-            //   icon: 'success',
-            //   title: 'Your acount has been saved',
-            //   showConfirmButton: false,
-            //   timer: 5000
-            // })
             Swal.fire({
               title: "Verify your email",
               text: "We send a confirmation to your email. Check it out",

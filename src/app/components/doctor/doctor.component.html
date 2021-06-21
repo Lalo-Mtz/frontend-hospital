@@ -8,7 +8,8 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a (click)="totable()" routerLink="/doctor" routerLinkActive="active"><span class="fa fa-table"></span><span>Tablero</span></a>
+                    <a (click)="totable()" routerLink="/doctor" routerLinkActive="active"><span
+                            class="fa fa-table"></span><span>Tablero</span></a>
                 </li>
                 <li>
                     <a (click)="todoctorme()" routerLinkActive="active"><span class="fa fa-user-md"></span>
@@ -110,7 +111,7 @@
                                             <tr>
                                                 <td>Nombre</td>
                                                 <td>Apellido</td>
-                                                <td>Estado</td>
+                                                <td>Urgencia</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -119,7 +120,7 @@
                                                     <td>{{patient.name}}</td>
                                                     <td>{{patient.surnames}}</td>
                                                     <td>
-                                                        <span class="status green"></span> Bueno
+                                                        <span class="status {{patient.urgency}}"></span> {{patient.urgency}}
                                                     </td>
                                                 </tr>
                                             </ng-container>
@@ -298,7 +299,7 @@
 
 
                         <h1>{{me.username}}</h1>
-                        <p><span class="fa fa-user-md"></span>{{me.type}}</p>
+                        <p><span class="fa fa-user-md"></span> {{me.type}}</p>
 
                     </div>
                 </div>
@@ -307,62 +308,46 @@
 
         </section>
 
-        
-        <section id="pacientes">  
-            <main>
-                
-                <div class="card-body">
-                <div class="table-responsive">
 
-                <div class="histitle"><h1>Pacientes</h1></div>
-                <div class="wrapperpat">
-                    <div class="cardpat">
-                        <img src="assets/e.jpg" alt="">
-                        <div class="name">
-                            <h1>efrain peralta</h1>
-                            <a routerLink="/showpat" routerLinkActive="active" class="btn">ver paciente</a>
+        <section id="pacientes">
+            <main>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+
+                        <div class="histitle">
+                            <h1>Pacientes</h1>
                         </div>
-                    </div>
-                    <div class="cardpat">
-                        <img src="assets/m.jpg" alt="">
-                        <div class="name">
-                            <h1>efrain peralta</h1>
-                            <a href="" class="btn">ver paciente</a>
-                        </div>
-                    </div>
-                    <div class="cardpat">
-                        <img src="assets/e.jpg" alt="">
-                        <div class="name">
-                            <h1>efrain peralta</h1>
-                            <a href="" class="btn">ver paciente</a>
-                        </div>
-                    </div>
-                    <div class="cardpat">
-                        <img src="assets/m.jpg" alt="">
-                        <div class="name">
-                            <h1>efrain peralta</h1>
-                            <a href="" class="btn">ver paciente</a>
-                        </div>
-                    </div>
-                    <div class="cardpat">
-                        <img src="assets/m.jpg" alt="">
-                        <div class="name">
-                            <h1>efrain peralta</h1>
-                            <a href="" class="btn">ver paciente</a>
-                        </div>
-                    </div>
-                    <div class="cardpat">
-                        <img src="assets/m.jpg" alt="">
-                        <div class="name">
-                            <h1>efrain peralta</h1>
-                            <a href="" class="btn">ver paciente</a>
+                        <div class="wrapperpat">
+
+                            <ng-container *ngIf="confirmDocPatients(); else existDocPatients">
+                                <div class="cardpat" *ngFor="let docPat of docPatients; index as i;">
+                                    <img src="assets/e.jpg" alt="">
+                                    <div class="name">
+                                        <h1>{{docPat.name + " " + docPat.surnames}}</h1>
+                                        <a (click)="seePatient(i)" routerLinkActive="active" class="btn">Ver paciente</a>
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <ng-template #existDocPatients>
+                                <h3 style="text-align: center;">No atiendes a ningún paciente</h3>
+
+                            </ng-template>
+
+                            <!-- <div class="cardpat">
+                                <img src="assets/e.jpg" alt="">
+                                <div class="name">
+                                    <h1>efrain peralta</h1>
+                                    <a routerLink="/showpat" routerLinkActive="active" class="btn">ver paciente</a>
+                                </div>
+                            </div> -->
+
                         </div>
                     </div>
                 </div>
-                </div>
-            </div>
-        </main>
-    </section>    
+            </main>
+        </section>
 
 
         <section id="historial">
@@ -380,19 +365,49 @@
                                     <td>ID Consulta</td>
                                     <td>Fecha de Consulta</td>
                                     <td>Pacientes</td>
-                                    <td>Estado</td>
+                                    <td>Urgencia</td>
                                     <td>Motivo</td>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+
+                                <ng-container *ngIf="confirmPatients(); else existPatientstwo">
+                                    <tr *ngFor="let patientH of patients; index as i">
+                                        <td>{{patientH.id}}</td>
+                                        <td>{{patientH.create_at}}</td>
+                                        <td>{{patientH.name + " " + patientH.surnames}}</td>
+                                        <!-- <td *ngIf="isBad({{patientH.urgency}}); else isGoodC">
+                                            <span class="status red"></span> Alto
+                                        </td>
+                                        <td #isGoodC>
+                                            <span class="status red"></span> Alto
+                                        </td> -->
+                                        <td>
+                                            <span class="status {{patientH.urgency}}"></span> {{patientH.urgency}}
+                                        </td>
+                                        <td>{{patientH.reason}}</td>
+                                    </tr>
+                                </ng-container>
+
+                                <ng-template #existPatientstwo>
+                                    <tr>
+                                        <td>Aun no</td>
+                                        <td>has</td>
+                                        <td>Atendido a</td>
+                                        <td>Ningun</td>
+                                        <td>paciente</td>
+                                    </tr>
+
+                                </ng-template>
+
+                                <!-- <tr>
                                     <td>0001</td>
                                     <td>25-20-2020</td>
                                     <td>Geras</td>
                                     <td>
                                         <span class="status green"></span> Bueno
                                     </td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>0002</td>
@@ -403,7 +418,7 @@
                                         <span class="status green"></span> Bueno
                                     </td>
                                     <td>covid</td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td>0003</td>
@@ -422,7 +437,7 @@
                                         <span class="status green"></span> Bueno
                                     </td>
                                     <td>se murio</td>
-                                </tr>
+                                </tr> -->
 
 
                             </tbody>
@@ -433,6 +448,6 @@
 
         </section>
 
-        
+
     </div>
 </body>

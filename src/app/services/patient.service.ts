@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -18,5 +18,9 @@ export class PatientService {
 
   getPatient(id:any){
     return this.http.get<any>(this.URL + '/' + id);
+  }
+
+  getDoctorsPatients(id:any){
+    return this.http.get<any>(this.URL + '/doctor/' + id);
   }
 }

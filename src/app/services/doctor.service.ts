@@ -12,11 +12,15 @@ export class DoctorService {
     private http: HttpClient
   ) { }
 
-  getInfo(){
+  getInfo() {
     return this.http.get<any>(this.URL);
   }
 
-  getTablero(){
+  getTablero() {
     return this.http.get<any>(this.URL + '/dashboard');
+  }
+
+  setInfo(doctor: any) {
+    return this.http.post<any>(this.URL, doctor);
   }
 }

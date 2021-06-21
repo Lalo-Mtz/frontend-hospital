@@ -58,27 +58,27 @@
                         <img src="assets/p.jpg" alt=""/>
 
                         
-                        <h1>Efrain Peralta Rodriguez</h1>
+                        <h1>{{dataPatient.name + " " + dataPatient.surnames}}</h1>
                         <p><span class="fa fa-user"></span> Paciente</p>
                         
                     </div>
                     <div class="dminfo">
                         <div class="secciones">
                         <h3>Nombre(s) <span class="fa fa-check-square-o"></span></h3>
-                        <p>Efrain</p>
+                        <p>{{dataPatient.name}}</p>
                         </div>
 
                         <div class="secciones">
                         <h3>Apellidos<span class="fa fa-check-square-o"></span></h3>
-                        <p>Peralta Rodriguez</p>
+                        <p>{{dataPatient.surnames}}</p>
                         </div>
                         <div class="secciones">
                         <h3>Fecha de Nacimiento <span class="fa fa-calendar"></span></h3>
-                        <p>12-05-2000</p>
+                        <p>{{dataPatient.birthdate}}</p>
                         </div>
                         <div class="secciones">
                         <h3>Telefono <span class="fa fa-phone"></span></h3>
-                        <p>449 346 51 48</p>
+                        <p>{{dataPatient.phone}}</p>
                         </div>
                         <div class="secciones">
                             <h3><a (click)="toeditpat()"  routerLinkActive="active" ><div class="colora"> Editar Informacion del paciente</div><span class="fa fa-pencil-square-o"></span></a></h3>

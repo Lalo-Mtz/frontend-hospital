@@ -4,10 +4,12 @@ import { Component, OnInit } from '@angular/core';
 import { PatientService } from '../../services/patient.service';
 import { DoctorService } from '../../services/doctor.service';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
 import { BehaviorSubject } from 'rxjs';
 import { RouterLinkActive } from '@angular/router';
+
 
 @Component({
   selector: 'app-doctor',
@@ -18,13 +20,15 @@ export class DoctorComponent implements OnInit {
 
   me = { id: '', username: '', email: '', type: '', country: '', college: '', phone: '' };
   dashboar = { num_p: 0, num_c: 0, num_w: 0 };
-  patients = [{ name: '', surnames: '' }];
+  patients = [{ id: 0, create_at: new Date(), name: '', surnames: '', urgency: 0, reason: "" }];
+  docPatients = [{ name: '', surnames: '' }];
   idp = 1;  //Modific
 
   constructor(
     private patientService: PatientService,
     private doctorService: DoctorService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,14 +36,14 @@ export class DoctorComponent implements OnInit {
       .subscribe(
         res => {
           this.me = res;
-          console.log(this.me);
-          if(this.me.type == null){
+          if (this.me.type == null) {
             Swal.fire({
               title: 'Your information is empty',
               icon: 'info',
               text: 'Fill in your information first',
-              confirmButtonText:'Go!!'
+              confirmButtonText: 'Go!!'
             })
+            this.router.navigate(['/editdoc']);
           }
         },
         err => {
@@ -56,16 +60,6 @@ export class DoctorComponent implements OnInit {
         }
       );
     this.dashboarInfo();
-  }
-
-  consultPatients() {
-    this.patientService.getPatients()
-      .subscribe(
-        res => {
-          console.log(res);
-        },
-        err => console.log(err)
-      )
   }
 
   consultPatient() {
@@ -103,16 +97,45 @@ export class DoctorComponent implements OnInit {
           this.dashboar.num_c = res.num_c;
           this.dashboar.num_w = res.num_w;
           this.patients = res.patients;
+          console.log(this.patients)
         }
+        this.consultDoctorsPatients();
       },
-        err => console.log(err));
+        err => console.log(err)
+      );
   }
 
+  consultDoctorsPatients() {
+    this.patientService.getDoctorsPatients(this.me.id)
+      .subscribe(
+        res => {
+          if (res) {
+            if (res.patients) {
+              this.docPatients = res.patients;
+            }
+          }
+        },
+        err => console.log(err)
+      )
+  }
 
-  confirmPatients(){
-    if(this.patients.length == 0) return false;
+  confirmPatients() {
+    if (this.patients.length == 0) return false;
     return true;
   }
 
+  confirmDocPatients() {
+    if (this.docPatients.length == 0) return false;
+    return true;
+  }
 
+  isBad(level:any) {
+    if(level == 3) return true;
+    return false;
+  }
+
+  seePatient(idp: any){
+    localStorage.setItem('idp', idp);
+    this.router.navigate(['/showpat']);
+  }
 }
