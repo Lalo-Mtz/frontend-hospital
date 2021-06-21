@@ -376,12 +376,6 @@
                                         <td>{{patientH.id}}</td>
                                         <td>{{patientH.create_at}}</td>
                                         <td>{{patientH.name + " " + patientH.surnames}}</td>
-                                        <!-- <td *ngIf="isBad({{patientH.urgency}}); else isGoodC">
-                                            <span class="status red"></span> Alto
-                                        </td>
-                                        <td #isGoodC>
-                                            <span class="status red"></span> Alto
-                                        </td> -->
                                         <td>
                                             <span class="status {{patientH.urgency}}"></span> {{patientH.urgency}}
                                         </td>

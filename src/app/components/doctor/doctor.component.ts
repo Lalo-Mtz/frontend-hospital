@@ -62,15 +62,15 @@ export class DoctorComponent implements OnInit {
     this.dashboarInfo();
   }
 
-  consultPatient() {
-    this.patientService.getPatient(this.idp)
-      .subscribe(
-        res => {
-          console.log(res);
-        },
-        err => console.log(err)
-      )
-  }
+  // consultPatient() {
+  //   this.patientService.getPatient(this.idp)
+  //     .subscribe(
+  //       res => {
+  //         console.log(res);
+  //       },
+  //       err => console.log(err)
+  //     )
+  // }
 
   totable() {
     document.getElementById("Tablero")?.scrollIntoView({ behavior: "smooth" });
@@ -129,13 +129,9 @@ export class DoctorComponent implements OnInit {
     return true;
   }
 
-  isBad(level:any) {
-    if(level == 3) return true;
-    return false;
-  }
-
-  seePatient(idp: any){
-    localStorage.setItem('idp', idp);
+  seePatient(id: any){
+    var idp = Number.parseInt(id) + 1;
+    localStorage.setItem('idp', idp.toString());
     this.router.navigate(['/showpat']);
   }
 }

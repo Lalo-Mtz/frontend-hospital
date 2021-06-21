@@ -23,4 +23,17 @@ export class PatientService {
   getDoctorsPatients(id:any){
     return this.http.get<any>(this.URL + '/doctor/' + id);
   }
+
+  setInfo(patient: any) {
+    return this.http.post<any>(this.URL, patient);
+  }
+
+  getHistory(id:any){
+    return this.http.get<any>(this.URL + '/history/' + id);
+  }
+
+  getInfoPrescription(id:any){
+    return this.http.get<any>(this.URL + '/prescription/' + id);
+  }
+
 }
