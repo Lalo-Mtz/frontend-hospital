@@ -34,4 +34,9 @@ export class ShowpatComponent implements OnInit {
   toeditpat() {
     document.getElementById("Editarinfo")?.scrollIntoView({ behavior: "smooth" });
   }
+
+  toreslab(){
+    document.getElementById("reslab")?.scrollIntoView({behavior:"smooth"});
+  }
+
 }
