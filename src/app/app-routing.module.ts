@@ -27,8 +27,8 @@ const routes: Routes = [
   { path: 'signin-doctor', component: SigninDoctorComponent },
   { path: 'signin-nurse', component: SigninNurseComponent },
   { path: 'signin-staff', component: SigninStaffComponent },
-  { path: 'editdoc', component: EditdocComponent },
-  { path: 'showpat' , component:ShowpatComponent}
+  { path: 'editdoc', component: EditdocComponent, canActivate: [AuthGuard] },
+  { path: 'showpat' , component:ShowpatComponent, canActivate: [AuthGuard]}
 
 ];
 
