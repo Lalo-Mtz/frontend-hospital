@@ -1,4 +1,3 @@
-
 <body>
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
@@ -8,31 +7,31 @@
         <!--Secciones-del-tablero-->
         <div class="sidebar-menu">
             <ul>
-                <li >
-                    <a routerLink="/doctor" routerLinkActive="active" ><span class="fa fa-table"></span>
-                    <span>Tablero</span></a>
+                <li>
+                    <a (click)="cancel()" routerLinkActive="active"><span class="fa fa-table"></span>
+                        <span>Tablero</span></a>
                 </li>
                 <li>
-                    <a (click)="topatient()"  routerLinkActive="active" class="active"><span class="fa fa-user"></span>
-                    <span>Informacion Del Paciente</span></a>
+                    <a (click)="topatient()" routerLinkActive="active" class="active"><span class="fa fa-user"></span>
+                        <span>Informacion Del Paciente</span></a>
                 </li>
                 <li>
-                    <a (click)="toreceta()"  routerLinkActive="active" ><span class="fa fa-user"></span>
-                    <span>Recetas</span></a>
+                    <a (click)="toreceta()" routerLinkActive="active"><span class="fa fa-user"></span>
+                        <span>Recetas</span></a>
                 </li>
                 <li>
-                    <a (click)="toreslab()"  routerLinkActive="active" ><span class="fa fa-user"></span>
-                    <span>Resultados de Laboratorio</span></a>
+                    <a (click)="toreslab()" routerLinkActive="active"><span class="fa fa-user"></span>
+                        <span>Resultados de Laboratorio</span></a>
                 </li>
                 <li>
-                    <a (click)="toeditpat()"  routerLinkActive="active" ><span class="fa fa-user"></span>
-                    <span>Editar Informacion Del paciente</span></a>
+                    <a (click)="toeditpat()" routerLinkActive="active"><span class="fa fa-user"></span>
+                        <span>Editar Informacion Del paciente</span></a>
                 </li>
             </ul>
         </div>
     </div>
 
-    
+
 
     <div class="main-content">
         <section id="Tablero">
@@ -42,53 +41,59 @@
                         <span class="fa fa-bars"></span>
                     </label> Tablero
                 </h2>
-    
-                <!-- <div class="user-wrapper">
-                    <img src="assets/p.jpg" width="40px" height="40px" alt="">
-                    <div>
-                        <h4>Brayan Capetillo</h4>
-                        <small>Medico general</small>
-                    </div>
-                </div> -->
+
+               
             </header>
         </section>
         <section id="infopaciente">
-    
+
             <main>
-                <div class="dmtitle"><div><h1>Información Del paciente</h1></div><div><h1>Datos Personales</h1></div></div>
+                <div class="dmtitle">
+                    <div>
+                        <h1>Información Del paciente</h1>
+                    </div>
+                    <div>
+                        <h1>Datos Personales</h1>
+                    </div>
+                </div>
                 <div class="dmcard">
                     <div class="dmimg">
-                        <img src="assets/p.jpg" alt=""/>
+                        <img src="assets/p.jpg" alt="" />
 
-                        
+
                         <h1>{{dataPatient.name + " " + dataPatient.surnames}}</h1>
                         <p><span class="fa fa-user"></span> Paciente</p>
-                        
+
                     </div>
                     <div class="dminfo">
                         <div class="secciones">
-                        <h3>Nombre(s) <span class="fa fa-check-square-o"></span></h3>
-                        <p>{{dataPatient.name}}</p>
+                            <h3>Nombre(s) <span class="fa fa-check-square-o"></span></h3>
+                            <p>{{dataPatient.name}}</p>
                         </div>
 
                         <div class="secciones">
-                        <h3>Apellidos<span class="fa fa-check-square-o"></span></h3>
-                        <p>{{dataPatient.surnames}}</p>
+                            <h3>Apellidos<span class="fa fa-check-square-o"></span></h3>
+                            <p>{{dataPatient.surnames}}</p>
                         </div>
                         <div class="secciones">
-                        <h3>Fecha de Nacimiento <span class="fa fa-calendar"></span></h3>
-                        <p>{{dataPatient.birthdate}}</p>
+                            <h3>Fecha de Nacimiento <span class="fa fa-calendar"></span></h3>
+                            <p>{{dataPatient.birthdate}}</p>
                         </div>
                         <div class="secciones">
-                        <h3>Telefono <span class="fa fa-phone"></span></h3>
-                        <p>{{dataPatient.phone}}</p>
+                            <h3>Telefono <span class="fa fa-phone"></span></h3>
+                            <p>{{dataPatient.phone}}</p>
                         </div>
                         <div class="secciones">
-                            <h3><a (click)="toeditpat()"  routerLinkActive="active" ><div class="colora"> Editar Informacion del paciente</div><span class="fa fa-pencil-square-o"></span></a></h3>
+                            <h3><a (click)="toeditpat()" routerLinkActive="active">
+                                    <div class="colora"> Editar Informacion del paciente</div><span
+                                        class="fa fa-pencil-square-o"></span>
+                                </a></h3>
                         </div>
                     </div>
                 </div>
-                <div class="histitle"><h1>Historia Clinica</h1></div>
+                <div class="histitle">
+                    <h1>Historia Clinica</h1>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table width="100%">
@@ -115,8 +120,8 @@
                                         <td>{{h.blood_pre}}</td>
                                         <td>{{h.hearbeat}} p/min</td>
                                         <td>{{h.reason}}</td>
-                                        <td><span (click)="torecetaSelect(i)">Receta {{h.id_con}}</span></td>
-                                        <td><a href="">Lab 01</a></td>
+                                        <td><span (click)="torecetaSelect(i)" class="linkaR">Receta {{h.id_con}}</span></td>
+                                        <td><span class="linkaR">Lab 01</span></td>
                                     </tr>
                                 </ng-container>
 
@@ -131,7 +136,7 @@
                                         <td>consulta</td>
                                         <td><a href="">Receta 01</a></td>
                                         <td><a href="">Lab 01</a></td>
-                                     </tr>
+                                    </tr>
 
                                 </ng-template>
                             </tbody>
@@ -144,7 +149,9 @@
 
         <section id="recetas">
             <main>
-                <div class="histitle"><h1>Receta</h1></div>
+                <div class="histitle">
+                    <h1>Receta</h1>
+                </div>
                 <div class="contentreceta">
                     <div class="recetahead">
                         <div class="img1">
@@ -189,18 +196,11 @@
 
                         Medicamento(s):
                         <ul>
-                        <!-- <li *ngFor></li> -->
-                        <li>Teme 1 Capsula cada 12 horas por 15 días.</li>
-
-                        <li>Sustancia activa: Diclofenaco /Tiamina /Piridoxina/ Cianocobalamina.</li>
-
-                        <li>Indicaciones: Evitar tensiones, situaciones de estrés, y descansar seguido.</li>
-
-                        <li>Dieta: No hay dieta, se puede comer lo habitual.</li>
+                            <li *ngFor="let med of medicine; index as i">{{med}}</li>
                         </ul>
 
                     </div>
-                    <div class="barrasep"></div> 
+                    <div class="barrasep"></div>
                     <div class="recetafot">
                         las parras No.415 colonia los pedritos, AGS. Tel 449 346 51 48. {{infoDoc.email}}
                     </div>
@@ -211,7 +211,9 @@
         </section>
         <section id="reslab">
             <main>
-                <div class="histitle"><h1>Resultados de laboratorio</h1></div>
+                <div class="histitle">
+                    <h1>Resultados de laboratorio</h1>
+                </div>
                 <div class="contentlab">
                     <div class="headerlab">
                         <div><img src="assets/img1.png" alt=""> </div>
@@ -246,7 +248,7 @@
                                         <td>Aspecto</td>
                                         <td>Turbio</td>
                                         <td>Transparente</td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <td>Sedimento</td>
@@ -263,48 +265,7 @@
                                         <td>7.0</td>
                                         <td>5.0 - 7.0</td>
                                     </tr>
-                                    <tr>
-                                        <td>Proteinas (Albumina) mg/dL</td>
-                                        <td>Negativo</td>
-                                        <td>Negativo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Glucosa, mg /dL</td>
-                                        <td>Negativo</td>
-                                        <td>Negativo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Hemoglobina, mg /dL</td>
-                                        <td>10</td>
-                                        <td>Negativo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bilirrubina, mg /dL</td>
-                                        <td>Negativo</td>
-                                        <td>Negativo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cetonas, mg /dL</td>
-                                        <td>Negativo</td>
-                                        <td>Negativo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nitritos</td>
-                                        <td>Negativo</td>
-                                        <td>Negativo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Urobilinogeno, mg /dL</td>
-                                        <td>Negativo</td>
-                                        <td>Negativo ( << = 1.0)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>EST. Leucocitaria, mg /dL</td>
-                                        <td>Negativo</td>
-                                        <td>Negativo</td>
-                                    </tr>
-    
-    
+
                                 </tbody>
                             </table>
                         </div>
@@ -330,7 +291,7 @@
                                         <td>18</td>
                                         <td>5</td>
                                         <td>0 - 2 p/campo</td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <td>Bacterias</td>
@@ -371,7 +332,7 @@
                             las parras No.415 colonia los pedritos, AGS. Tel 449 346 51 48. brayancapetoccc@gmail.com
                         </div>
                     </div>
-                    
+
 
 
                 </div>
@@ -381,51 +342,57 @@
 
         <section id="Editarinfo">
             <main>
-            <div class="card-body">
-                <div class="histitle"><h1>Editando Datos Paciente</h1></div>
-                <div class="table-responsive">
-                    <form action="">
-                    <table class="tabla2" width="80%">
-                        <thead>
-                            <tr>
-                                <td>Datos</td>
-                                <td>Editar</td>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Nombre(s) <span class="fa fa-check-square-o"></span></td>
-                                <td><input type="text" name="name" [(ngModel)]="dataPatient.name"  required><span class="fa fa-pencil-square-o end"> </span></td>
-                            </tr>
-                            <tr>
-                                <td>Apellidos <span class="fa fa-text-width"></span></td>
-                                <td><input type="text" name="surnames" [(ngModel)]="dataPatient.surnames"  required><span class="fa fa-pencil-square-o end"> </span></td>
-                            </tr>
-                            <tr>
-                                <td>Fecha de Nacimiento <span class="fa fa-text-width"></span></td>
-                                <td><input type="date" name="birthdate" [(ngModel)]="dataPatient.birthdate"  required></td>
-                            </tr>
-                            
-                            <tr>
-                                <td>Telefono <span class="fa fa-phone"></span></td>
-                                <td><input type="text" name="phone" [(ngModel)]="dataPatient.phone"  required><span class="fa fa-pencil-square-o end"> </span></td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
-
-                    <div class="btnedit">
-                        <input (click)="cancel()" value="Cancelar">
-                        <input (click)="savePatient()" value="Guardar Cambios">
+                <div class="card-body">
+                    <div class="histitle">
+                        <h1>Editando Datos Paciente</h1>
                     </div>
-                </form>
+                    <div class="table-responsive">
+                        <form action="">
+                            <table class="tabla2" width="80%">
+                                <thead>
+                                    <tr>
+                                        <td>Datos</td>
+                                        <td>Editar</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Nombre(s) <span class="fa fa-check-square-o"></span></td>
+                                        <td><input type="text" name="name" [(ngModel)]="dataPatient.name" required><span
+                                                class="fa fa-pencil-square-o end"> </span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Apellidos <span class="fa fa-text-width"></span></td>
+                                        <td><input type="text" name="surnames" [(ngModel)]="dataPatient.surnames"
+                                                required><span class="fa fa-pencil-square-o end"> </span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fecha de Nacimiento <span class="fa fa-text-width"></span></td>
+                                        <td><input type="date" name="birthdate" [(ngModel)]="dataPatient.birthdate"
+                                                required></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Telefono <span class="fa fa-phone"></span></td>
+                                        <td><input type="text" name="phone" [(ngModel)]="dataPatient.phone"
+                                                required><span class="fa fa-pencil-square-o end"> </span></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                            <div class="btnedit">
+                                <input type="submit" (click)="cancel()" value="Cancelar">
+                                <input type="submit" (click)="savePatient()" value="Guardar Cambios">
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
-                
-            </div>
-        </main>
-        </section> 
-       
+            </main>
+        </section>
+
     </div>
 
 </body>

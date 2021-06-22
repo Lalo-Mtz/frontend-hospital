@@ -34,45 +34,30 @@
                         </div>
                         <div class="wrapperpat">
 
-                            <!-- <ng-container *ngIf="confirmDocPatients(); else existDocPatients"> -->
-                                <ng-container>
-                                <!-- <div class="cardpat" *ngFor="let docPat of docPatients; index as i;"> -->
-                                    <div class="cardpat">
+                            <ng-container *ngIf="confirmPatients(); else existPatients">
+                            
+                                <div class="cardpat" *ngFor="let pat of patients; index as i;">
                                     <img src="assets/e.jpg" alt="">
                                     <div class="name">
-                                        <!-- <h1>{{docPat.name + " " + docPat.surnames}}</h1> -->
-                                        <h1>Lalo Martinez</h1>
-                                        <!-- <a (click)="seePatient(i)" routerLinkActive="active" class="btn">Ver paciente</a> -->
-                                        <a routerLink="/showpat" routerLinkActive="active" class="btn">Ver paciente</a>
-                                        <a (click)="toagregarconsulta()"  routerLinkActive="active" class="btn">Consulta <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                                        <h1>{{pat.name + " " + pat.surnames}}</h1>
+                                        <a (click)="seePatient(i)" routerLinkActive="active" class="btn">Ver paciente</a>
+                                        <a (click)="toagregarconsultaId(i)"  routerLinkActive="active" class="btn">Consulta <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
-                                <div class="cardpat">
-                                    <img src="assets/add.png" alt="">
-                                    <div class="name">
-                                        <!-- <h1>{{docPat.name + " " + docPat.surnames}}</h1> -->
-                                        <h1>Agregar Paciente</h1>
-                                        <!-- <a (click)="seePatient(i)" routerLinkActive="active" class="btn">Ver paciente</a> -->
-                                        <a routerLinkActive="active" class="btn"> Agregar P <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
+                                
                                 
                             </ng-container>
 
-                            <!-- <ng-template #existDocPatients> -->
-                                <ng-template>
-                                <h3 style="text-align: center;">No atiendes a ningún paciente</h3>
-                                
-
+                            <ng-template #existPatients>
+                                <div class="cardpat">
+                                    <img src="assets/add.png" alt="">
+                                    <div class="name">
+                                        <h1>Agregar Paciente</h1>
+                                        <a (click)="toagregar()" routerLinkActive="active" class="btn"> Agregar <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
                             </ng-template>
 
-                            <!-- <div class="cardpat">
-                                <img src="assets/e.jpg" alt="">
-                                <div class="name">
-                                    <h1>efrain peralta</h1>
-                                    <a routerLink="/showpat" routerLinkActive="active" class="btn">ver paciente</a>
-                                </div>
-                            </div> -->
 
                         </div>
                     </div>
@@ -97,27 +82,42 @@
                         <tbody>
                             <tr>
                                 <td>Nombre <span class="fa fa-text-width"></span></td>
-                                <td><input type="text" name="username" placeholder="nombre" required><span
+                                <td><input type="text" name="username" placeholder="Nombre" [(ngModel)]="newPatient.name" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Apellidos <span class="fa fa-text-width"></span></td>
-                                <td><input type="text" name="username" placeholder="apellidos" required><span
+                                <td><input type="text" name="surnames" placeholder="Apellidos" [(ngModel)]="newPatient.surnames" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Fecha de Nacimiento <span class="fa fa-envelope"></span></td>
-                                <td><input type="date" name="" placeholder="2000-10-20" required><span
+                                <td><input type="date" name="birthdate" [(ngModel)]="newPatient.birthdate" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Telefono <span class="fa fa-globe"></span></td>
-                                <td><input type="text" name="" placeholder="449 879 52 14" required><span
+                                <td><input type="text" name="phone" placeholder="Phone" [(ngModel)]="newPatient.phone" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             
+                            <tr>
+                                <td>Sexo <span class="fa fa-globe"></span></td>
+                                <td>
+                                    <select name="sex" [(ngModel)]="newPatient.sex">
+                                        <option value="" disabled selected >-- Selecciona --</option>
+                                        <option value="M">Mujer</option>
+                                        <option value="H">Hombre</option>
+                                    </select>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
+                    <div class="btnedit">
+                        <input type="submit" (click)="topatient()" value="Cancelar" >
+                        
+                        <input type="submit" (click)="savePatient()" value="Enviar Datos" >
+                    </div>
                 </form>
                 </div>
             </main>
@@ -140,56 +140,58 @@
                         <tbody>
                             <tr>
                                 <td>Nombre <span class="fa fa-text-width"></span></td>
-                                <td><input type="text" name="username" placeholder="tu nombre" required><span
+                                <td><input type="text" name="name" placeholder="Nombre" [(ngModel)]="newConsultation.name" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Apellidos <span class="fa fa-text-width"></span></td>
-                                <td><input type="text" name="username" placeholder="tus apellidos" required><span
+                                <td><input type="text" name="surnames" placeholder="Apellidos" [(ngModel)]="newConsultation.surnames" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Razon <span class="fa fa-exclamation"></span></td>
-                                <td><input type="text" name="username" placeholder="tu razon" required><span
+                                <td><input type="text" name="reason" placeholder="Razon" [(ngModel)]="newConsultation.reason" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Urgencia <span class="fa fa-exclamation-triangle"></span></td>
-                                <td><input type="mul" name="username" placeholder="grave/ malo /nomeacuerdo" required><span
+                                <td><input type="mul" name="urgency" placeholder="Bajo / Medio / Alto" [(ngModel)]="newConsultation.urgency" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Peso kg <span class="fa fa-ravelry"></span></td>
-                                <td><input type="number" name="username" placeholder="58" required><span
+                                <td><input type="number" name="weight" placeholder="Kg" [(ngModel)]="newConsultation.weight" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Talla m <span class="fa fa-exchange"></span></td>
-                                <td><input type="number" name="username" placeholder="1.65" required><span
+                                <td><input type="number" name="size" placeholder="m" [(ngModel)]="newConsultation.size" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Temperatura <span class="fa fa-circle-thin"></span></td>
-                                <td><input type="number" name="username" placeholder="36.5" required><span
+                                <td><input type="number" name="temperatura" placeholder="°C" [(ngModel)]="newConsultation.temperatura" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Presion Arterial <span class="fa fa-newspaper-o"></span></td>
-                                <td><input type="text" name="username" placeholder="100/60" required><span
+                                <td><input type="text" name="blood_pre" placeholder="x/y" [(ngModel)]="newConsultation.blood_pre" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             <tr>
                                 <td>Pulso Cardiaco <span class="fa fa-newspaper-o"></span></td>
-                                <td><input type="text" name="username" placeholder="80/60" required><span
+                                <td><input type="text" name="hearbeat" placeholder="p/min" [(ngModel)]="newConsultation.hearbeat" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                             </tr>
                             
                         </tbody>
                     </table>
                     <div class="btnedit">
-                        <input type="submit" value="Cancelar" >
+                        <input type="submit" (click)="clearNewConsultation()" value="Cancelar" >
                         
-                        <input type="submit" value="Enviar Datos" >
+                        <input type="submit" (click)="enterConsultation()" value="Enviar Datos" >
+
+                        <input type="submit" (click)="sendRequestToDoctor(1)" value="Enviar Prueba" >
                     </div>
                 </form>
                 </div>

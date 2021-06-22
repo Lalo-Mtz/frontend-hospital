@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 export class AuthService {
 
   private URL = 'http://localhost:3000';
-  
+
   constructor(
     private http: HttpClient,
     private router: Router
@@ -44,7 +44,48 @@ export class AuthService {
     return localStorage.getItem('user');
   }
 
+  offlineDoctor() {
+    return this.http.get<any>(this.URL + '/doctor/offline');
+  }
+
+  inlineDoctor() {
+    return this.http.get<any>(this.URL + '/doctor/inline');
+  }
+
+  offline() {
+    if (localStorage.getItem('user') == 'doctor') {
+      this.offlineDoctor()
+        .subscribe(
+          res => { },
+          err => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: `${err.error.message}`
+            });
+          }
+        )
+    }
+  }
+
+  inline(){
+    if (localStorage.getItem('user') == 'doctor') {
+      this.inlineDoctor()
+        .subscribe(
+          res => { },
+          err => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: `${err.error.message}`
+            });
+          }
+        )
+    }
+  }
+
   logout() {
+    this.offline();
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.router.navigate(['/home']);

@@ -72,7 +72,7 @@ export class ShowpatComponent implements OnInit {
     document.getElementById("reslab")?.scrollIntoView({ behavior: "smooth" });
   }
 
-
+  
   cancel() {
     this.router.navigate([`/${localStorage.getItem('user')}`]);
   }
@@ -88,7 +88,6 @@ export class ShowpatComponent implements OnInit {
               showConfirmButton: false,
               timer: 1800
             })
-            // this.router.navigate([`/${localStorage.getItem('user')}`]);
           }
         },
         err => console.log(err)

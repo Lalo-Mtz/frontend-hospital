@@ -15,4 +15,16 @@ export class NurseService {
   getInfo(){
     return this.http.get<any>(this.URL);
   }
+
+  newConsultation(infoPat:any){
+    return this.http.post<any>(this.URL + '/newconsultation', infoPat);
+  }
+
+  addvitalsigns(id_con:any, vitalsings:any){
+    return this.http.post<any>(this.URL + '/addvitalsigns/' + id_con, vitalsings);
+  }
+
+  joinWhitDoctor(){
+    return this.http.get<any>(this.URL + '/joindoctor')
+  }
 }

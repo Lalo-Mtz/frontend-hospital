@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { BehaviorSubject } from 'rxjs';
 import { RouterLinkActive } from '@angular/router';
+import { SocketwebService } from 'src/app/services/socketweb.service';
 
 
 @Component({
@@ -22,14 +23,19 @@ export class DoctorComponent implements OnInit {
   dashboar = { num_p: 0, num_c: 0, num_w: 0 };
   patients = [{ id: 0, create_at: new Date(), name: '', surnames: '', urgency: 0, reason: "" }];
   docPatients = [{ name: '', surnames: '' }];
-  idp = 1;  //Modific
+  requestC: any = [];
 
   constructor(
     private patientService: PatientService,
     private doctorService: DoctorService,
     private authService: AuthService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private socketwebService: SocketwebService
+  ) {
+    socketwebService.callback.subscribe(res => {
+      this.addRequestC(res.id_con);
+    })
+  }
 
   ngOnInit(): void {
     this.doctorService.getInfo()
@@ -62,16 +68,6 @@ export class DoctorComponent implements OnInit {
     this.dashboarInfo();
   }
 
-  // consultPatient() {
-  //   this.patientService.getPatient(this.idp)
-  //     .subscribe(
-  //       res => {
-  //         console.log(res);
-  //       },
-  //       err => console.log(err)
-  //     )
-  // }
-
   totable() {
     document.getElementById("Tablero")?.scrollIntoView({ behavior: "smooth" });
   }
@@ -97,7 +93,6 @@ export class DoctorComponent implements OnInit {
           this.dashboar.num_c = res.num_c;
           this.dashboar.num_w = res.num_w;
           this.patients = res.patients;
-          console.log(this.patients)
         }
         this.consultDoctorsPatients();
       },
@@ -129,9 +124,18 @@ export class DoctorComponent implements OnInit {
     return true;
   }
 
-  seePatient(id: any){
+  seePatient(id: any) {
     var idp = Number.parseInt(id) + 1;
     localStorage.setItem('idp', idp.toString());
     this.router.navigate(['/showpat']);
+  }
+
+  confirmRequestC() {
+    if (this.requestC.length == 0) return false;
+    return true;
+  }
+
+  addRequestC(id_con:any) {
+    this.requestC.push({ name: "Gerardo", reason: "Dolor de cabeza" });
   }
 }
