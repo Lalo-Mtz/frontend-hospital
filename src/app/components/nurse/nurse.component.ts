@@ -37,6 +37,10 @@ export class NurseComponent implements OnInit {
   toagregar() {
     document.getElementById("agregarpaciente")?.scrollIntoView({ behavior: "smooth" });
   }
+  toagregarreslab() {
+    document.getElementById("agregarreslab")?.scrollIntoView({ behavior: "smooth" });
+  }
+
 
   toagregarconsulta() {
     if (!this.confirmPatients()) {

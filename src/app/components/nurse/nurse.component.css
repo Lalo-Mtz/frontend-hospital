@@ -7,7 +7,8 @@
 }
 #agregarpaciente,
 #agregarconsulta,
-#pacientes{
+#pacientes,
+#agregarreslab{
     padding-top: 50px;
 }
 
@@ -274,6 +275,7 @@ td input:focus{
 
 .cardpat:hover{
     transform: translateY(-20px);
+    height: 450px;
 }
 
 .cardpat::before{
@@ -316,11 +318,13 @@ td input:focus{
     transition: 0.3s all;
 }
 
+
 .cardpat h1{
     text-align: center;
     font-size: 1.2rem;
     padding: 0 30px;
     transition: 0.3s all;
+    transform: translateY(70px);
 }
 
 .cardpat:hover h1{
@@ -339,14 +343,14 @@ td input:focus{
     align-items: center;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    margin:5px 60px;
+    margin:5px 50px;
     background: #fff;
     color: #000;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.4s all;
-    width: 120px;
+    width: 150px;
 
 }
 
@@ -363,7 +367,31 @@ td input:focus{
     margin-bottom: 80px;
 }
 
-@media only screen and (max-width: 1200px) {
+select{
+    width: 300px;
+    border: 1px solid #ff00ea;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+
+
+@media only screen and (max-width: 1800px) {
+    
+    .wrapperpat{
+        display: grid;
+        width: 100%;
+        justify-content: space-around;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+}
+
+@media only screen and (max-width: 1280px) {
     .sidebar {
         width: 70px;
     }
@@ -386,6 +414,18 @@ td input:focus{
         width: calc(100% - 70px);
         left: 70px;
     }
+    .wrapperpat{
+        display: grid;
+        width: 100%;
+        justify-content: space-around;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .table-responsive{
+        max-width: 800px;
+        margin-left: 5%;
+    }
+    
+
 }
 
 @media only screen and (max-width: 960px) {
@@ -395,6 +435,17 @@ td input:focus{
     .recent-grid {
         grid-template-columns: 60% 40%;
     }
+    .wrapperpat{
+        display: grid;
+        width: 100%;
+        justify-content: space-around;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .table-responsive{
+        max-width: 800px;
+        margin-left: 0%;
+    }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -464,6 +515,17 @@ td input:focus{
     #nav-goggle:checked+.sidebar li a span:last-child {
         display: inline;
     }
+    .wrapperpat{
+        display: grid;
+        width: 100%;
+        justify-content: space-around;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .table-responsive{
+        max-width: 800px;
+        margin-left: 0%;
+    }
+
 }
 
 @media only screen and (max-width: 560px) {
@@ -485,4 +547,11 @@ td input:focus{
         padding-top: 0PX;
         
     }
+    .wrapperpat{
+        display: grid;
+        width: 100%;
+        justify-content: space-around;
+        grid-template-columns: repeat(1,1fr);
+    }
+
 }
