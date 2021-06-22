@@ -23,4 +23,8 @@ export class DoctorService {
   setInfo(doctor: any) {
     return this.http.post<any>(this.URL, doctor);
   }
+
+  infoPatinetToConsult(id_con: any){
+    return this.http.get<any>(this.URL + '/patient/' + id_con);
+  }
 }

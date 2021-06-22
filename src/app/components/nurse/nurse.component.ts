@@ -225,13 +225,21 @@ export class NurseComponent implements OnInit {
   }
 
   sendRequestToDoctor(id_con: any) {
-    this.nurseService.joinWhitDoctor()
+    this.nurseService.joinWhitDoctor(id_con)
       .subscribe(
         res => {
-
+          if(res.success){
+            this.socketwebService.emitEvent({ id_con, id_doc: res.id_doc, url: res.url });
+            window.location.href = `http://localhost:3500/${res.url}`;
+          }
         },
-        err => console.log(err)
+        err => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `${err.error.message}`
+          });
+        }
       )
-    this.socketwebService.emitEvent({ id_con });
   }
 }

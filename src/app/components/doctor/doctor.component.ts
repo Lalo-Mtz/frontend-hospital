@@ -33,7 +33,7 @@ export class DoctorComponent implements OnInit {
     private socketwebService: SocketwebService
   ) {
     socketwebService.callback.subscribe(res => {
-      this.addRequestC(res.id_con);
+      this.addRequestC(res);
     })
   }
 
@@ -135,7 +135,20 @@ export class DoctorComponent implements OnInit {
     return true;
   }
 
-  addRequestC(id_con:any) {
-    this.requestC.push({ name: "Gerardo", reason: "Dolor de cabeza" });
+  addRequestC(info: any) {
+    this.doctorService.infoPatinetToConsult(info.id_con)
+      .subscribe(
+        res => {
+          console.log(res);
+          this.requestC.push({ name: `${res.patient.name} ${res.patient.surnames}`, reason: res.patient.reason, url: info.url });
+        },
+        err => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `${err.error.message}`
+          });
+        }
+      )
   }
 }
