@@ -160,7 +160,7 @@ export class DoctorComponent implements OnInit {
         .subscribe(
           res => {
             this.authService.offline();
-            this.requestC.push({ name: `${res.patient.name} ${res.patient.surnames}`, reason: res.patient.reason, url: info.url });
+            this.requestC.push({id_con: info.id_con, name: `${res.patient.name} ${res.patient.surnames}`, reason: res.patient.reason, url: info.url });
           },
           err => {
             Swal.fire({
@@ -174,6 +174,7 @@ export class DoctorComponent implements OnInit {
   }
 
   redirige(){
-    
+    localStorage.setItem('id_con', this.requestC[0].id_con);
+    this.router.navigate(['/resulcon']);
   }
 }

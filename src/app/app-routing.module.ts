@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'signin-doctor', component: SigninDoctorComponent },
   { path: 'signin-nurse', component: SigninNurseComponent },
   { path: 'signin-staff', component: SigninStaffComponent },
-  { path: 'resulcon', component: ResulconComponent },
+  { path: 'resulcon', component: ResulconComponent, canActivate: [AuthGuard] },
   { path: 'editdoc', component: EditdocComponent, canActivate: [AuthGuard] },
   { path: 'showpat', component: ShowpatComponent, canActivate: [AllGuard] }
 

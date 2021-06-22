@@ -480,3 +480,22 @@ td input{
     
     
 }
+
+
+.btn-my{
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #6200ff;
+    background: #fff;
+    color: black;
+    transition: 0.3s all;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.btn-my:hover{
+    width: 300px;
+    border-radius: 20px;
+    background: #6200ff;
+    color: rgb(255, 255, 255);
+}

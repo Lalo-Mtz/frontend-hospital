@@ -24,11 +24,23 @@ export class DoctorService {
     return this.http.post<any>(this.URL, doctor);
   }
 
-  infoPatinetToConsult(id_con: any){
+  infoPatinetToConsult(id_con: any) {
     return this.http.get<any>(this.URL + '/patient/' + id_con);
   }
 
-  getEstadisticos(){
+  getEstadisticos() {
     return this.http.get<any>(this.URL + '/estadisticos');
+  }
+
+  getDataToConsultation(id_con: any) {
+    return this.http.get<any>(this.URL + '/consultation/' + id_con);
+  }
+
+  setResultados(resul: any, id_con:any) {
+    return this.http.post<any>(this.URL + '/resultados/' + id_con, {resul});
+  }
+
+  setReceta(rece: any, id_con:any) {
+    return this.http.post<any>(this.URL + '/receta/'  + id_con, {rece});
   }
 }

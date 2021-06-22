@@ -21,16 +21,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                    <td>Gerardo</td>
-                                    <td>Martinez</td>
-                                    <td>75kg</td>
-                                    <td>1.85m</td>
-                                    <td>36.5</td>
-                                    <td>102/60</td>
-                                    <td>80/60</td>
-                                    <td>Tos</td>
-                                
-
+                                    <td>{{info.name}}</td>
+                                    <td>{{info.surnames}}</td>
+                                    <td>{{info.weight}} Kg</td>
+                                    <td>{{info.size}} m</td>
+                                    <td>{{info.temperatura}} °</td>
+                                    <td>{{info.blood_pre}}</td>
+                                    <td>{{info.hearbeat}} p/min</td>
+                                    <td>{{info.reason}}</td>
                             </tbody>
                         </table>
                     </div>
@@ -41,26 +39,26 @@
 
         <section class="resultados">
             <div class="histitle">
-                <h1>Receta</h1>
+                <h1>Resultados</h1>
             </div>
             <div class="contentreceta">
                 
                 <div class="recetabody">
                     <div>
-                        Nombre del paciente: {{dataPatient .name + " " + dataPatient. surnames}}
+                        Nombre del paciente: {{info.name + " " + info.surnames}}
                     </div>
                     <div>
-                        Edad : {{dataPatient.age}} años
+                        Edad : {{info.age}} años
                     </div>
 
                 </div>
                 <div class="contentbody">
 
                     Resultados:
-                    <form action="">
+                    <form>
                     <div class="medicamentos">
-                        <input type="text" placeholder="Escriba aqui">
-                        <input type="submit" value="Enviar Resultados">
+                        <input type="text" name="resultados" [(ngModel)]="resultados" placeholder="Escriba aqui">
+                        <input type="submit" (click)="saveResultados()" value="Enviar Resultados">
                     </div>
                     </form>
 
@@ -82,14 +80,14 @@
                 <div class="contentreceta">
                     <div class="recetahead">
                         <div class="img1">
-                            <img src="/img/img1.png" alt="">
+                            <img src="assets/img1.png" alt="">
                         </div>
                         <div class="titulo">
-                            <h1>{{infoDoc.username}}</h1>
-                            <p>{{infoDoc.type}}</p>
+                            <!-- <h1>{{infoDoc.username}}</h1>
+                            <p>{{infoDoc.type}}</p> -->
                         </div>
                         <div class="img2">
-                            <img src="/img/img2.jfif" alt="">
+                            <img src="assets/img2.jfif" alt="">
                         </div>
                     </div>
                     <div class="recetahead2">
@@ -106,26 +104,26 @@
                             Receta Individual
                         </div>
                         <div>
-                            Fecha: {{prescription .create_at}}
+                            Fecha: {{datetoday}}
                         </div>
 
                     </div>
                     <div class="recetabody">
                         <div>
-                            Nombre del paciente: {{dataPatient .name + " " + dataPatient. surnames}}
+                            Nombre del paciente: {{info.name + " " + info.surnames}}
                         </div>
                         <div>
-                            Edad : {{dataPatient.age}} años
+                            Edad : {{info.age}} años
                         </div>
 
                     </div>
                     <div class="contentbody">
 
                         Medicamento(s):
-                        <form action="">
+                        <form>
                         <div class="medicamentos">
-                            <input type="text" placeholder="Escriba aqui">
-                            <input type="submit" value="Enviar Receta">
+                            <input type="text" name="receta" [(ngModel)]="receta" placeholder="Escriba aqui">
+                            <input type="submit" (click)="saveReceta()" value="Enviar Receta">
                         </div>
                         </form>
 
@@ -133,11 +131,12 @@
                     </div>
                     <div class="barrasep"></div>
                     <div class="recetafot">
-                        las parras No.415 colonia los pedritos, AGS. Tel 449 346 51 48. {{infoDoc.email}}
+                        las parras No.415 colonia los pedritos, AGS. Tel 449 346 51 48.
                     </div>
 
 
                 </div>
+                <button class="btn-my" (click)="regresa()">Salir</button>
         </section>
     </main>
     </div>
