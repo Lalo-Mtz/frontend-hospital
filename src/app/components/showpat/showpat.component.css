@@ -115,9 +115,9 @@
 }
 
 .main-content {
-    transition: margin-left 300ms;
-    margin-left: 345px;
-    margin-top: 180px;
+        transition: margin-left 300ms;
+        margin-left: 345px;
+        margin-top: 180px;
 }
 
 header {
@@ -607,8 +607,4 @@ td input{
     .recetahead2{
         display: block;
     }
-}
-.linkaR{
-    color: #0051ff;
-    cursor: pointer;
 }
