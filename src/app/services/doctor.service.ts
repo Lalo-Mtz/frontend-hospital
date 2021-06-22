@@ -27,4 +27,8 @@ export class DoctorService {
   infoPatinetToConsult(id_con: any){
     return this.http.get<any>(this.URL + '/patient/' + id_con);
   }
+
+  getEstadisticos(){
+    return this.http.get<any>(this.URL + '/estadisticos');
+  }
 }

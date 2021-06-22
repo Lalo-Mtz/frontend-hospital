@@ -17,6 +17,7 @@ export class ShowpatComponent implements OnInit {
   prescription = { id_con: 0, id_doc: 0, list: '', create_at: '' };
   infoDoc = { username: '', type: '', email: '' };
   medicine:any = [];
+  resultlab = { color: '', aspecto: '', sedimento: '', gravedad: '', ph: '', electrolitos: '', leucocitos: '', bacterias: '', celulas: '' }
 
   constructor(
     private patientService: PatientService,
@@ -51,6 +52,7 @@ export class ShowpatComponent implements OnInit {
   toreceta() {
     document.getElementById("recetas")?.scrollIntoView({ behavior: "smooth" });
   }
+
   torecetaSelect(i: any) {
     this.patientService.getInfoPrescription(this.history[i].id_con)
       .subscribe(
@@ -64,6 +66,19 @@ export class ShowpatComponent implements OnInit {
       );
     document.getElementById("recetas")?.scrollIntoView({ behavior: "smooth" });
   }
+
+  toresultSelect(i:any){
+    this.patientService.getInfoResults(this.history[i].id_con)
+      .subscribe(
+        res => {
+          this.resultlab = res.prescription;
+          // this.infoDoc = res.infoDoc;
+        },
+        err => console.log(err)
+      );
+    document.getElementById("reslab")?.scrollIntoView({ behavior: "smooth" });
+  }
+
   toeditpat() {
     document.getElementById("Editarinfo")?.scrollIntoView({ behavior: "smooth" });
   }

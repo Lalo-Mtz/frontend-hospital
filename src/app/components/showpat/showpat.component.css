@@ -608,3 +608,8 @@ td input{
         display: block;
     }
 }
+
+.linkaR{
+    color: #0051ff;
+    cursor: pointer;
+}

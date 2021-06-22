@@ -121,7 +121,7 @@
                                         <td>{{h.hearbeat}} p/min</td>
                                         <td>{{h.reason}}</td>
                                         <td><span (click)="torecetaSelect(i)" class="linkaR">Receta {{h.id_con}}</span></td>
-                                        <td><span class="linkaR">Lab 01</span></td>
+                                        <td><span (click)="toresultSelect(i)" class="linkaR">Lab {{h.id_con}}</span></td>
                                     </tr>
                                 </ng-container>
 
@@ -218,12 +218,9 @@
                     <div class="headerlab">
                         <div><img src="assets/img1.png" alt=""> </div>
                         <div>
-                            <h1>Dr. brayan de jesus capetillo macias</h1>
                             <p>STAR SEGUROS SA DE CV</p>
-                            <P>F. Alta : 20/06/2020</P>
-                            <P>F. impresion : 20/06/2020</P>
                             <P>estudio: 1 de 1</P>
-                            <p>Paciente: Efrain Peralta Rodriguez</p>
+                            <p>Paciente: {{dataPatient.name + " " + dataPatient.surnames}}</p>
                         </div>
                     </div>
                     <div class="barrasep"></div>
@@ -241,28 +238,28 @@
                                 <tbody>
                                     <tr>
                                         <td>Color </td>
-                                        <td>Amarillo palido</td>
+                                        <td>{{resultlab.color}}</td>
                                         <td>none</td>
                                     </tr>
                                     <tr>
                                         <td>Aspecto</td>
-                                        <td>Turbio</td>
+                                        <td>{{resultlab.aspecto}}</td>
                                         <td>Transparente</td>
 
                                     </tr>
                                     <tr>
                                         <td>Sedimento</td>
-                                        <td>Abundante</td>
+                                        <td>{{resultlab.sedimento}}</td>
                                         <td>Escaso</td>
                                     </tr>
                                     <tr>
                                         <td>Gravedad Especifica</td>
-                                        <td>1.009</td>
+                                        <td>{{resultlab.gravedad}}</td>
                                         <td>1.005 - 1.035</td>
                                     </tr>
                                     <tr>
                                         <td>PH</td>
-                                        <td>7.0</td>
+                                        <td>{{resultlab.ph}}</td>
                                         <td>5.0 - 7.0</td>
                                     </tr>
 
@@ -280,43 +277,31 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Eritrocitos </td>
-                                        <td>3</td>
+                                        <td>Electrolitos </td>
+                                        <td>{{resultlab.electrolitos}}</td>
                                         <td>Menor a 2 p/campo</td>
                                     </tr>
                                     <tr>
-                                        <td>Leucocitros</td>
-                                        <td>18</td>
+                                        <td>Leucocitos</td>
+                                        <td>{{resultlab.leucocitos}}</td>
                                         <td>0 - 2 p/campo</td>
 
                                     </tr>
                                     <tr>
                                         <td>Bacterias</td>
-                                        <td>1000.0</td>
+                                        <td>{{resultlab.bacterias}}</td>
                                         <td>none</td>
                                     </tr>
                                     <tr>
                                         <td>Celulas Epiteliales</td>
-                                        <td>15.0</td>
+                                        <td>{{resultlab.celulas}}</td>
                                         <td>none</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="infolab">
-                        <div>
-                            <h6>OTROS HALLAZGOS</h6>
-                            <br>
-                            Mucina
-
-                        </div>
-                        <div>
-                            <h6>Resultado</h6>
-                            <br>
-                            AUSENTE
-                        </div>
-                    </div>
+                   
 
                     <div class="fotterlab">
                         <div class="firmalab">
@@ -324,7 +309,7 @@
                         </div>
                         <div class="barrasep"></div>
                         <div class="infofotterlab">
-                            las parras No.415 colonia los pedritos, AGS. Tel 449 346 51 48. brayancapetoccc@gmail.com
+                            las parras No.415 colonia los pedritos, AGS. Tel 449 346 51 48.
                         </div>
                     </div>
 
