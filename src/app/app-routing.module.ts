@@ -16,6 +16,7 @@ import { ShowpatComponent } from './components/showpat/showpat.component';
 import { AuthGuard } from './guard/auth.guard';
 import { NurseGuard } from './guard/nurse.guard';
 import { StaffGuard } from './guard/staff.guard';
+import { AllGuard } from './guard/all.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -28,7 +29,7 @@ const routes: Routes = [
   { path: 'signin-nurse', component: SigninNurseComponent },
   { path: 'signin-staff', component: SigninStaffComponent },
   { path: 'editdoc', component: EditdocComponent, canActivate: [AuthGuard] },
-  { path: 'showpat' , component:ShowpatComponent, canActivate: [AuthGuard]}
+  { path: 'showpat', component: ShowpatComponent, canActivate: [AllGuard] }
 
 ];
 
