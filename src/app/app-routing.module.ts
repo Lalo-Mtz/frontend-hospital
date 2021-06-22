@@ -12,6 +12,7 @@ import { SigninNurseComponent } from './components/signin-nurse/signin-nurse.com
 import { SigninStaffComponent } from './components/signin-staff/signin-staff.component';
 import { EditdocComponent } from './components/editdoc/editdoc.component';
 import { ShowpatComponent } from './components/showpat/showpat.component';
+import { ResulconComponent} from './components/resulcon/resulcon.component';
 
 import { AuthGuard } from './guard/auth.guard';
 import { NurseGuard } from './guard/nurse.guard';
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'signin-doctor', component: SigninDoctorComponent },
   { path: 'signin-nurse', component: SigninNurseComponent },
   { path: 'signin-staff', component: SigninStaffComponent },
+  { path: 'resulcon', component: ResulconComponent },
   { path: 'editdoc', component: EditdocComponent, canActivate: [AuthGuard] },
   { path: 'showpat', component: ShowpatComponent, canActivate: [AllGuard] }
 

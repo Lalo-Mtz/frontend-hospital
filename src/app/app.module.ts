@@ -21,6 +21,7 @@ import { StaffGuard } from './guard/staff.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { EditdocComponent } from './components/editdoc/editdoc.component';
 import { ShowpatComponent } from './components/showpat/showpat.component';
+import { ResulconComponent } from './components/resulcon/resulcon.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ShowpatComponent } from './components/showpat/showpat.component';
     SigninNurseComponent,
     SigninStaffComponent,
     EditdocComponent,
-    ShowpatComponent
+    ShowpatComponent,
+    ResulconComponent
   ],
   imports: [
     BrowserModule,
