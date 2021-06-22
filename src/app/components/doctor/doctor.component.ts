@@ -85,6 +85,10 @@ export class DoctorComponent implements OnInit {
   tohistorial() {
     document.getElementById("historial")?.scrollIntoView({ behavior: "smooth" });
   }
+  toestadisitco() {
+    document.getElementById("estadisticos")?.scrollIntoView({ behavior: "smooth" });
+  }
+
 
 
   dashboarInfo() {
