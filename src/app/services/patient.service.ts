@@ -36,6 +36,10 @@ export class PatientService {
     return this.http.get<any>(this.URL + '/prescription/' + id);
   }
 
+  getInfoResults(id:any){
+    return this.http.get<any>(this.URL + '/results/' + id);
+  }
+
   addPatient(patient:any){
     return this.http.post<any>(this.URL + '/add', patient);
   }

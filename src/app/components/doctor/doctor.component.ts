@@ -24,6 +24,7 @@ export class DoctorComponent implements OnInit {
   patients = [{ id: 0, create_at: new Date(), name: '', surnames: '', urgency: 0, reason: "" }];
   docPatients = [{ id: 0, name: '', surnames: '' }];
   requestC: any = [];
+  esta= {h:'', m:'', mas:'', edad:'', me:'', ba:'', al:''};
 
   constructor(
     private patientService: PatientService,
@@ -110,9 +111,22 @@ export class DoctorComponent implements OnInit {
               this.docPatients = res.patients;
             }
           }
+          this.estadisticos();
         },
         err => console.log(err)
       )
+  }
+
+  estadisticos(){
+    this.doctorService.getEstadisticos()
+    .subscribe(
+      res => {
+        if(res.success){
+          this.esta = res.esta;
+        }
+      },
+      err => console.log(err)
+    )
   }
 
   confirmPatients() {

@@ -151,7 +151,7 @@
                                 <button>Mostrar todo <span class="fa fa-bell">
                                     </span></button>
                             </div>
-                            
+
                             <div class="card-body">
 
                                 <ng-container *ngIf="confirmRequestC(); else noreq">
@@ -165,7 +165,8 @@
                                         </div>
                                         <div class="contact">
                                             <a href=""><span class="fa fa-user-circle purple"></span></a>
-                                            <a href="http://localhost:3500/{{reqC.url}}"><span class="fa fa fa-phone green"></span></a>
+                                            <a  target="_blank" href="http://localhost:3500/{{reqC.url}}"><span
+                                                    class="fa fa fa-phone green"></span></a>
                                             <a href=""><span class="fa fa fa-phone red"></span></a>
                                         </div>
                                     </div>
@@ -311,6 +312,83 @@
 
         </section>
 
+        <section id="estadisticos">
+            <main>
+                <div class="histitle">
+                    <h1>Estadisticos</h1>
+                </div>
+                <div class="cards">
+
+                    <div class="card-single">
+                        <div>
+                            <h1>{{esta.h}}%</h1>
+                            <span>Porcentaje de Hombres</span>
+                        </div>
+                        <div>
+                            <span class="fa fa-user-md"></span>
+                        </div>
+                    </div>
+
+                    <div class="card-single">
+                        <div>
+                            <h1>{{esta.m}}%</h1>
+                            <span>Porcentaje de Mujeres</span>
+                        </div>
+                        <div>
+                            <span class="fa fa-users"></span>
+                        </div>
+                    </div>
+
+                    <div class="card-single">
+                        <div>
+                            <h1>{{esta.mas}}</h1>
+                            <span>Enfermedad más común</span>
+                        </div>
+                        <div>
+                            <span class="fa fa-file-text-o"></span>
+                        </div>
+                    </div>
+
+                    <div class="card-single">
+                        <div>
+                            <h1>{{esta.edad}} años</h1>
+                            <span>Edad de con más consultas</span>
+                        </div>
+                        <div>
+                            <span class="fa fa-heart"></span>
+                        </div>
+                    </div>
+
+                    <div class="card-single">
+                        <div>
+                            <h1>{{esta.ba}}%</h1>
+                            <span>Porcentaje Urgencia Bajo</span>
+                        </div>
+                        <div>
+                            <span class="fa fa-heart"></span>
+                        </div>
+                    </div>
+                    <div class="card-single">
+                        <div>
+                            <h1>{{esta.me}}%</h1>
+                            <span>Porcentaje Urgencia Medio</span>
+                        </div>
+                        <div>
+                            <span class="fa fa-heart"></span>
+                        </div>
+                    </div>
+                    <div class="card-single">
+                        <div>
+                            <h1>{{esta.al}}%</h1>
+                            <span>Porcentaje Urgencia Alto</span>
+                        </div>
+                        <div>
+                            <span class="fa fa-heart"></span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
 
     </div>
 </body>
