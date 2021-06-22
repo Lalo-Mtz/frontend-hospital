@@ -20,6 +20,7 @@ export class NurseComponent implements OnInit {
   newPatient = { name: '', surnames: '', phone: '', sex: '', birthdate: '' };
   patients = [{ id: 0, name: '', surnames: '', phone: '', sex: '', birthdate: '' }];
   newConsultation = { name: '', surnames: '', reason: '', urgency: '', weight: '', size: '', temperatura: '', blood_pre: '', hearbeat: '' }
+  resultlab = { color: '', aspecto: '', sedimento: '', gravedad: '', ph: '', electrolitos: '', leucocitos: '', bacterias: '', celulas: '' }
 
   constructor(
     private nurseService: NurseService,
@@ -37,10 +38,6 @@ export class NurseComponent implements OnInit {
   toagregar() {
     document.getElementById("agregarpaciente")?.scrollIntoView({ behavior: "smooth" });
   }
-  toagregarreslab() {
-    document.getElementById("agregarreslab")?.scrollIntoView({ behavior: "smooth" });
-  }
-
 
   toagregarconsulta() {
     if (!this.confirmPatients()) {
@@ -142,45 +139,70 @@ export class NurseComponent implements OnInit {
       )
   }
 
-  seePatient(id: any) {
-    var idp = Number.parseInt(id) + 1;
-    localStorage.setItem('idp', idp.toString());
+  seePatient(idex: any) {
+    var i = Number.parseInt(idex);
+    localStorage.setItem('idp', this.patients[i].id.toString());
     this.router.navigate(['/showpat']);
   }
 
   enterConsultation() {
-    this.verifyDoctors();
-    if (!this.isEmplyConsultation()) {
-      this.nurseService.newConsultation({
-        fullname: `${this.newConsultation.name} ${this.newConsultation.surnames}`,
-        reason: this.newConsultation.reason,
-        urgency: this.newConsultation.urgency
-      })
-        .subscribe(
-          res => {
-            if (res.success) {
-              this.saveVitalsings(res.id_con);
-            }
-          },
-          err => this.errorSaveConsultation(err)
-        )
-    } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'You need to fill all the fields',
-        footer: 'Check that none are missing'
-      });
-    }
+    this.nurseService.verifyDoctors().subscribe(
+      res => {
+        if (res.success) {
+          if (!this.isEmplyConsultation()) {
+            this.nurseService.newConsultation({
+              fullname: `${this.newConsultation.name} ${this.newConsultation.surnames}`,
+              reason: this.newConsultation.reason,
+              urgency: this.newConsultation.urgency
+            })
+              .subscribe(
+                res => {
+                  if (res.success) {
+                    this.saveVitalsings(res.id_con);
+                  }
+                },
+                err => this.errorSaveConsultation(err)
+              )
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'You need to fill all the fields',
+              footer: 'Check that none are missing'
+            });
+          }
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: "Every doctors are busy"
+          });
+        }
+      }
+    )
+
   }
 
   saveVitalsings(id_con: any) {
     this.nurseService.addvitalsigns(id_con, {
-      weight: this.newConsultation.weight,
-      size: this.newConsultation.size,
-      temperatura: this.newConsultation.temperatura,
-      blood_pre: this.newConsultation.blood_pre,
-      hearbeat: this.newConsultation.hearbeat
+      vitalsings: {
+        weight: this.newConsultation.weight,
+        size: this.newConsultation.size,
+        temperatura: this.newConsultation.temperatura,
+        blood_pre: this.newConsultation.blood_pre,
+        hearbeat: this.newConsultation.hearbeat
+      },
+      resultlab: {
+        color: this.resultlab.color,
+        aspecto: this.resultlab.aspecto,
+        sedimento: this.resultlab.sedimento,
+        gravedad: this.resultlab.gravedad,
+        ph: this.resultlab.ph,
+        electrolitos: this.resultlab.electrolitos,
+        leucocitos: this.resultlab.leucocitos,
+        bacterias: this.resultlab.bacterias,
+        celulas: this.resultlab.celulas
+      }
     })
       .subscribe(
         res => {
@@ -224,15 +246,11 @@ export class NurseComponent implements OnInit {
       this.newConsultation.hearbeat == '';
   }
 
-  verifyDoctors() {
-
-  }
-
   sendRequestToDoctor(id_con: any) {
     this.nurseService.joinWhitDoctor(id_con)
       .subscribe(
         res => {
-          if(res.success){
+          if (res.success) {
             this.socketwebService.emitEvent({ id_con, id_doc: res.id_doc, url: res.url });
             window.location.href = `http://localhost:3500/${res.url}`;
           }
@@ -245,5 +263,9 @@ export class NurseComponent implements OnInit {
           });
         }
       )
+  }
+
+  toagregarreslab() {
+    document.getElementById("agregarreslab")?.scrollIntoView({ behavior: "smooth" });
   }
 }

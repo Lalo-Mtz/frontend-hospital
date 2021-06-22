@@ -22,7 +22,7 @@ export class DoctorComponent implements OnInit {
   me = { id: '', username: '', email: '', type: '', country: '', college: '', phone: '' };
   dashboar = { num_p: 0, num_c: 0, num_w: 0 };
   patients = [{ id: 0, create_at: new Date(), name: '', surnames: '', urgency: 0, reason: "" }];
-  docPatients = [{ name: '', surnames: '' }];
+  docPatients = [{ id: 0, name: '', surnames: '' }];
   requestC: any = [];
 
   constructor(
@@ -38,6 +38,7 @@ export class DoctorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.authService.inline();
     this.doctorService.getInfo()
       .subscribe(
         res => {
@@ -124,9 +125,9 @@ export class DoctorComponent implements OnInit {
     return true;
   }
 
-  seePatient(id: any) {
-    var idp = Number.parseInt(id) + 1;
-    localStorage.setItem('idp', idp.toString());
+  seePatient(idex: any) {
+    var i = Number.parseInt(idex);
+    localStorage.setItem('idp', this.docPatients[i].id.toString());
     this.router.navigate(['/showpat']);
   }
 
@@ -136,19 +137,21 @@ export class DoctorComponent implements OnInit {
   }
 
   addRequestC(info: any) {
-    this.doctorService.infoPatinetToConsult(info.id_con)
-      .subscribe(
-        res => {
-          console.log(res);
-          this.requestC.push({ name: `${res.patient.name} ${res.patient.surnames}`, reason: res.patient.reason, url: info.url });
-        },
-        err => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: `${err.error.message}`
-          });
-        }
-      )
+    if (info.id_doc == this.me.id) {
+      this.doctorService.infoPatinetToConsult(info.id_con)
+        .subscribe(
+          res => {
+            this.authService.offline();
+            this.requestC.push({ name: `${res.patient.name} ${res.patient.surnames}`, reason: res.patient.reason, url: info.url });
+          },
+          err => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: `${err.error.message}`
+            });
+          }
+        )
+    }
   }
 }

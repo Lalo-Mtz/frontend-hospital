@@ -27,4 +27,8 @@ export class NurseService {
   joinWhitDoctor(id_con:any){
     return this.http.get<any>(this.URL + '/joindoctor/' + id_con);
   }
+
+  verifyDoctors(){
+    return this.http.get<any>(this.URL + '/verifyDoctors');
+  }
 }

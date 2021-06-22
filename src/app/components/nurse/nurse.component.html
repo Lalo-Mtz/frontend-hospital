@@ -195,8 +195,6 @@
                         <input type="submit" (click)="clearNewConsultation()" value="Cancelar" >
                         
                         <input type="submit" (click)="enterConsultation()" value="Enviar Datos" >
-
-                        <input type="submit" (click)="sendRequestToDoctor(1)" value="Enviar Prueba" >
                     </div>
                 </form>
                 </div>
@@ -223,31 +221,31 @@
                         <tbody>
                             <tr>
                                 <td>Color <span class="fa fa-paint-brush"></span></td>
-                                <td><input type="text" name="name" placeholder="amarillo palido" [(ngModel)]="newConsultation.name" required><span
+                                <td><input type="text" name="color" placeholder="amarillo palido" [(ngModel)]="resultlab.color" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                                 <td>none</td>
                             </tr>
                             <tr>
                                 <td>Aspecto <span class="fa fa-eercast"></span></td>
-                                <td><input type="text" name="surnames" placeholder="Turbio" [(ngModel)]="newConsultation.surnames" required><span
+                                <td><input type="text" name="aspecto" placeholder="Turbio" [(ngModel)]="resultlab.aspecto" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                                 <td>Transparente</td>
                             </tr>
                             <tr>
                                 <td>Sedimento <span class="fa fa-exclamation"></span></td>
-                                <td><input type="text" name="reason" placeholder="Abundante" [(ngModel)]="newConsultation.reason" required><span
+                                <td><input type="text" name="sedimento" placeholder="Abundante" [(ngModel)]="resultlab.sedimento" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                                 <td>Escaso</td>
                             </tr>
                             <tr>
                                 <td>Gravedad Especifica <span class="fa fa-exclamation-triangle"></span></td>
-                                <td><input type="number" name="urgency" max="1.035" min="1.005" placeholder="1.005 - 1.035" [(ngModel)]="newConsultation.urgency" required><span
+                                <td><input type="number" name="gravedad" max="1.035" min="1.005" placeholder="1.005 - 1.035" [(ngModel)]="resultlab.gravedad" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                                 <td>1.005 - 1.035</td>
                             </tr>
                             <tr>
                                 <td>PH <span class="fa fa-ravelry"></span></td>
-                                <td><input type="number" name="weight" max="7.0" min="5.0" placeholder="5.0 - 7.0" [(ngModel)]="newConsultation.weight" required><span
+                                <td><input type="number" name="ph" max="7.0" min="5.0" placeholder="5.0 - 7.0" [(ngModel)]="resultlab.ph" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                                 <td>5.0 - 7.0</td>        
                             </tr>
@@ -268,37 +266,31 @@
                         <tbody>
                             <tr>
                                 <td>Eritrocitos <span class="fa fa-sort-numeric-desc"></span></td>
-                                <td><input type="number" name="name" max="5" min="0" placeholder="0-5" [(ngModel)]="newConsultation.name" required><span
+                                <td><input type="number" name="electrolitos" max="5" min="0" placeholder="0-5" [(ngModel)]="resultlab.electrolitos" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                                 <td>Menor a 5</td>
                             </tr>
                             <tr>
                                 <td>Leucocitros <span class="fa fa-sort-numeric-desc"></span></td>
-                                <td><input type="number" max="20" min="0" name="surnames" placeholder="0-20" [(ngModel)]="newConsultation.surnames" required><span
+                                <td><input type="number" max="20" min="0" name="leucocitos" placeholder="0-20" [(ngModel)]="resultlab.leucocitos" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                                 <td>0 - 20 </td>
                             </tr>
                             <tr>
                                 <td>Bacterias <span class="fa fa-exclamation"></span></td>
-                                <td><input type="number" max="1000.0" name="reason" placeholder="1000.00" [(ngModel)]="newConsultation.reason" required><span
+                                <td><input type="number" max="1000.0" name="bacterias" placeholder="1000.00" [(ngModel)]="resultlab.bacterias" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                                 <td>none</td>
                             </tr>
                             <tr>
                                 <td>Celulas Epiteliales <span class="fa fa-exclamation-triangle"></span></td>
-                                <td><input type="number" name="urgency" max="15.0" min="0" placeholder="15.0" [(ngModel)]="newConsultation.urgency" required><span
+                                <td><input type="number" name="celulas" max="15.0" min="0" placeholder="15.0" [(ngModel)]="resultlab.celulas" required><span
                                         class="fa fa-pencil-square-o end"> </span></td>
                                 <td>none</td>
                             </tr>
                             
                         </tbody>
                     </table>
-                    <div class="btnedit">
-                        <input type="submit" (click)="clearNewConsultation()" value="Cancelar" >
-                        
-                        <input type="submit" (click)="enterConsultation()" value="Enviar Datos" >
-
-                    </div>
                 </form>
                 </div>
             </main>

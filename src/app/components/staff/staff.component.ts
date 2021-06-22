@@ -56,12 +56,12 @@ export class StaffComponent implements OnInit {
       )
   }
 
-  seePatient(id: any) {
-    var idp = Number.parseInt(id) + 1;
-    localStorage.setItem('idp', idp.toString());
+  seePatient(idex: any) {
+    var i = Number.parseInt(idex);
+    localStorage.setItem('idp', this.patients[i].id.toString());
     this.router.navigate(['/showpat']);
   }
-
+  
   confirmPatients() {
     if (this.patients.length == 0) return false;
     return true;
