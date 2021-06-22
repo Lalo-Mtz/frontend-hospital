@@ -24,7 +24,7 @@ export class NurseService {
     return this.http.post<any>(this.URL + '/addvitalsigns/' + id_con, vitalsings);
   }
 
-  joinWhitDoctor(){
-    return this.http.get<any>(this.URL + '/joindoctor')
+  joinWhitDoctor(id_con:any){
+    return this.http.get<any>(this.URL + '/joindoctor/' + id_con);
   }
 }
